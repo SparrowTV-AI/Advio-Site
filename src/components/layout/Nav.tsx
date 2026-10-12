@@ -33,16 +33,16 @@ export default function Nav() {
             <Link
               key={n.href}
               href={n.href}
-              className={`text-sm transition-colors hover:text-lime ${path === n.href ? "text-lime" : "text-white/80"}`}
+              className={`text-sm transition-colors hover:text-gem ${path === n.href ? "text-gem" : "text-white/80"}`}
             >
               {n.label}
             </Link>
           ))}
           <Link
             href={cta.href}
-            className="rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-white"
+            className="group flex items-center gap-2 rounded-full border border-white/40 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink"
           >
-            {cta.label}
+            {cta.label} <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
           </Link>
         </nav>
         <button
@@ -69,7 +69,7 @@ export default function Nav() {
                   {n.label}
                 </Link>
               ))}
-              <Link href={cta.href} className="mt-4 rounded-full bg-lime px-5 py-4 text-center font-semibold text-ink">
+              <Link href={cta.href} className="mt-4 rounded-full bg-white px-5 py-4 text-center font-semibold text-ink">
                 {cta.label}
               </Link>
             </div>
