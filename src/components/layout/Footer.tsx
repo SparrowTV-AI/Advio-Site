@@ -1,0 +1,49 @@
+import Link from "next/link";
+import Logo from "@/components/ui/Logo";
+import { nav, site } from "@/lib/site";
+
+export default function Footer() {
+  return (
+    <footer className="relative overflow-hidden border-t border-white/10 bg-ink">
+      <div className="mx-auto max-w-7xl px-5 pb-10 pt-24 md:px-10">
+        <div className="grid gap-16 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <Logo />
+            <p className="display mt-10 text-5xl text-white md:text-7xl">
+              Television,
+              <br />
+              <span className="text-gradient">connected.</span>
+            </p>
+            <p className="mt-6 text-muted">Inventory. Intelligence. Delivery. Shared opportunity.</p>
+          </div>
+          <div className="grid grid-cols-2 gap-10 text-sm">
+            <div className="flex flex-col gap-3">
+              <p className="eyebrow mb-2 text-white/40">Explore</p>
+              {nav.map((n) => (
+                <Link key={n.href} href={n.href} className="text-white/80 hover:text-lime">
+                  {n.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col gap-3">
+              <p className="eyebrow mb-2 text-white/40">Engage</p>
+              <Link href="/model" className="text-white/80 hover:text-lime">Model your opportunity</Link>
+              <Link href="/contact" className="text-white/80 hover:text-lime">Request a working session</Link>
+              <a href={`mailto:${site.email}`} className="text-white/80 hover:text-lime">{site.email}</a>
+            </div>
+          </div>
+        </div>
+        <div className="mt-24 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row">
+          <p>© {new Date().getFullYear()} ADVIO. All rights reserved.</p>
+          <p>{site.formerly}</p>
+        </div>
+      </div>
+      <p
+        aria-hidden
+        className="display pointer-events-none absolute -bottom-[0.18em] left-1/2 -translate-x-1/2 select-none text-[28vw] leading-none text-white/[0.03]"
+      >
+        advio
+      </p>
+    </footer>
+  );
+}
