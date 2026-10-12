@@ -1,5 +1,4 @@
 import Hero from "@/components/home/Hero";
-import Evidence from "@/components/home/Evidence";
 import HouseholdsScene from "@/components/home/HouseholdsScene";
 import ConnectionScene from "@/components/home/ConnectionScene";
 import OperatingModel from "@/components/home/OperatingModel";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Evidence />
       <Marquee items={["Live moments", "Premium inventory", "Connected opportunity", "Shared value"]} />
       <HouseholdsScene />
       <ConnectionScene />
@@ -23,7 +21,7 @@ export default function Home() {
         <Container>
           <SectionHeading
             eyebrow="Why it works"
-            title={<>Built for <span className="text-gem">both sides.</span></>}
+            title={<>Built for <span className="text-lime">both sides.</span></>}
             body="Broadcasters and distributors depend on each other to bring television to viewers. New advertising opportunity becomes practical when those interests have a clear way to work together."
           />
           <FeatureGrid
@@ -60,7 +58,7 @@ export default function Home() {
         <Container className="grid gap-16 md:grid-cols-2">
           <SectionHeading
             eyebrow="Partner-specific economics"
-            title={<>The opportunity starts with <span className="text-gem">your numbers.</span></>}
+            title={<>The opportunity starts with <span className="text-lime">your numbers.</span></>}
             body="Use your actual inventory, audience, delivery footprint and advertising economics to model potential value. A pilot separates estimates from observed results."
           />
           <div className="flex flex-col justify-end gap-4">
@@ -70,12 +68,12 @@ export default function Home() {
               ["Shared net value", "How could broadcaster and distributor participation work after incremental costs?"],
             ].map(([t, b], i) => (
               <Reveal key={t} delay={i * 0.08}>
-                <Link href="/model" className="group flex items-start justify-between gap-6 rounded-2xl border border-white/10 p-6 transition-colors hover:border-gem/60 hover:bg-white/[0.03]">
+                <Link href="/model" className="group flex items-start justify-between gap-6 rounded-2xl border border-white/10 p-6 transition-colors hover:border-lime/60 hover:bg-white/[0.03]">
                   <div>
                     <h3 className="text-xl font-semibold text-white">{t}</h3>
                     <p className="mt-2 text-muted">{b}</p>
                   </div>
-                  <span className="text-2xl text-gem transition-transform group-hover:translate-x-1">→</span>
+                  <span className="text-2xl text-lime transition-transform group-hover:translate-x-1">→</span>
                 </Link>
               </Reveal>
             ))}

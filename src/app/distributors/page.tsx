@@ -12,9 +12,8 @@ export default function Distributors() {
     <>
       <PageHero
         eyebrow="For distributors"
-        title="Connect delivery"
-        accent="to opportunity."
-        pose={{ rotation: [-0.1, -0.9, Math.PI / 3.2], scale: 0.95 }}
+        title="Your footprint."
+        accent="New opportunity."
         body="Explore advertising value in the television already moving through your network, with integration and viewer continuity tested before scale."
         cta={{ label: "Explore a distribution partnership", href: "/contact?role=distributor" }}
       />

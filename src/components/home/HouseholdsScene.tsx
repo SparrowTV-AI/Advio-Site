@@ -45,10 +45,10 @@ const steps = [
 function colorFor(step: number, r: number) {
   const intended = r < TOTAL * 0.6;
   const eligible = !intended && r % 2 === 0;
-  if (step === 0) return "#8a96ad";
-  if (step === 1) return intended ? "#dfe5ef" : "#26334d";
-  if (step === 2) return intended ? "#3a4763" : "#9fb4ff";
-  return intended ? "#3a4763" : eligible ? "#4f7bff" : "#55658a";
+  if (step === 0) return "#3b4ff5";
+  if (step === 1) return intended ? "#3b4ff5" : "#1a2a4d";
+  if (step === 2) return intended ? "#22337a" : "#5ce1e6";
+  return intended ? "#22337a" : eligible ? "#d4ff4f" : "#2d6f86";
 }
 
 export default function HouseholdsScene() {
@@ -62,7 +62,7 @@ export default function HouseholdsScene() {
   return (
     <section ref={ref} className="relative h-[420vh] bg-navy">
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(79,123,255,0.18),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(59,79,245,0.25),transparent_60%)]" />
         <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 md:grid-cols-[1fr_1.25fr] md:px-10">
           <div className="min-h-[300px]">
             <AnimatePresence mode="wait">
@@ -73,11 +73,11 @@ export default function HouseholdsScene() {
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="eyebrow mb-5 text-steel">{s.eyebrow}</p>
+                <p className="eyebrow mb-5 text-cyan">{s.eyebrow}</p>
                 <h2 className="display text-5xl text-white md:text-7xl">{s.title}</h2>
                 <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">{s.body}</p>
                 <div className="mt-10 flex items-baseline gap-4">
-                  <span className="display text-6xl text-gem md:text-7xl">{s.stat}</span>
+                  <span className="display text-6xl text-lime md:text-7xl">{s.stat}</span>
                   <span className="text-sm text-white/60">{s.label}</span>
                 </div>
               </motion.div>
@@ -99,16 +99,16 @@ export default function HouseholdsScene() {
                     style={{
                       background: colorFor(step, r),
                       transitionDelay: `${(r % 40) * 12}ms`,
-                      boxShadow: step === 3 && r >= TOTAL * 0.6 && r % 2 === 0 ? "0 0 14px rgba(79,123,255,0.85)" : "none",
+                      boxShadow: step === 3 && r >= TOTAL * 0.6 && r % 2 === 0 ? "0 0 12px rgba(212,255,79,0.6)" : "none",
                     }}
                   />
                 );
               })}
             </div>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
-              <Legend c="#dfe5ef" t="Intended audience" />
-              <Legend c="#9fb4ff" t="Outside intended audience" />
-              <Legend c="#4f7bff" t="Eligible opportunity" />
+              <Legend c="#3b4ff5" t="Intended audience" />
+              <Legend c="#5ce1e6" t="Outside intended audience" />
+              <Legend c="#d4ff4f" t="Eligible opportunity" />
             </div>
             <p className="mt-4 text-xs text-white/35">
               Illustration only — 1,000 households. Not pilot results or a revenue claim. Out-of-target does not
@@ -117,7 +117,7 @@ export default function HouseholdsScene() {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 h-0.5 w-full bg-white/5">
-          <motion.div style={{ width: bar }} className="h-full bg-gem" />
+          <motion.div style={{ width: bar }} className="h-full bg-lime" />
         </div>
       </div>
     </section>

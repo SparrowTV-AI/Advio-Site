@@ -2,8 +2,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import Button from "./Button";
-import Monolith from "@/components/three/Monolith";
-import type { MonolithPose } from "@/components/three/MonolithScene";
 
 export default function PageHero({
   eyebrow,
@@ -11,14 +9,12 @@ export default function PageHero({
   accent,
   body,
   cta,
-  pose,
 }: {
   eyebrow: string;
   title: string;
   accent?: string;
   body: string;
   cta?: { label: string; href: string };
-  pose?: MonolithPose;
 }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -26,18 +22,13 @@ export default function PageHero({
   const o = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   return (
     <section ref={ref} className="grain relative flex min-h-[86svh] items-end overflow-hidden bg-ink pb-20 pt-36">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_10%,#26324f_0%,transparent_55%),radial-gradient(ellipse_at_80%_50%,#1b2742_0%,transparent_60%)]" />
-      {pose && (
-        <div className="pointer-events-none absolute inset-y-0 right-[-25%] w-[85%] opacity-40 md:right-[-10%] md:w-[48%] md:opacity-100">
-          <Monolith pose={pose} className="h-full w-full" />
-        </div>
-      )}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(59,79,245,0.4),transparent_55%),radial-gradient(ellipse_at_10%_90%,rgba(212,255,79,0.08),transparent_45%)]" />
       <div className="grid-bg absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_70%)]" />
       <motion.div style={{ y, opacity: o }} className="relative mx-auto w-full max-w-7xl px-5 md:px-10">
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="eyebrow mb-8 text-steel">
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="eyebrow mb-8 text-cyan">
           {eyebrow}
         </motion.p>
-        <h1 className="display relative z-10 max-w-3xl text-6xl text-white md:text-[6rem]">
+        <h1 className="display max-w-5xl text-6xl text-white md:text-[7.5rem]">
           <motion.span
             className="block"
             initial={{ opacity: 0, y: 60 }}

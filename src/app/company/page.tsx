@@ -11,9 +11,8 @@ export default function Company() {
     <>
       <PageHero
         eyebrow="Company"
-        title="One ecosystem."
-        accent="More opportunity."
-        pose={{ rotation: [0.3, 0.2, Math.PI / 5], scale: 0.9 }}
+        title="Television,"
+        accent="connected."
         body="ADVIO — formerly SparrowTV — builds the intelligence that connects broadcasters and distributors around new advertising opportunity."
       />
       <section className="bg-paper py-28 text-ink md:py-40">

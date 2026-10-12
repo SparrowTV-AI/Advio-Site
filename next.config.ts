@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [{ source: "/adglean", destination: "/how-it-works", permanent: true }];
-  },
+  /* config options here */
 };
 
 export default nextConfig;

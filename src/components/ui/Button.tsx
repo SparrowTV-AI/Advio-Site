@@ -3,14 +3,14 @@ import Link from "next/link";
 type Props = {
   href: string;
   children: React.ReactNode;
-  variant?: "gem" | "ghost" | "dark";
+  variant?: "lime" | "ghost" | "dark";
   className?: string;
 };
 
-export default function Button({ href, children, variant = "gem", className = "" }: Props) {
+export default function Button({ href, children, variant = "lime", className = "" }: Props) {
   const styles = {
-    gem: "bg-white text-ink hover:bg-silver",
-    ghost: "border border-white/25 text-white hover:border-white hover:bg-white/5",
+    lime: "bg-lime text-ink hover:bg-white",
+    ghost: "border border-white/25 text-white hover:border-lime hover:text-lime",
     dark: "bg-ink text-white hover:bg-navy-3",
   }[variant];
   return (

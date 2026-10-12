@@ -18,7 +18,7 @@ export default function ConnectionScene() {
   return (
     <section id="connection" ref={ref} className="relative h-[380vh] bg-ink">
       <div className="sticky top-0 flex h-[100svh] flex-col items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_55%,rgba(159,180,255,0.12),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_55%,rgba(92,225,230,0.12),transparent_60%)]" />
 
         <div className="relative z-10 mb-10 h-40 w-full max-w-4xl px-5 text-center md:mb-16">
           <Caption p={p} range={[0, 0.08, 0.28, 0.36]} eyebrow="The connection that creates opportunity">
@@ -27,7 +27,7 @@ export default function ConnectionScene() {
           <Caption p={p} range={[0.36, 0.42, 0.62, 0.7]} eyebrow="ADVIO">
             The piece that changes the picture.
           </Caption>
-          <Caption p={p} range={[0.7, 0.76, 0.98, 1]} eyebrow="Shared opportunity" gem>
+          <Caption p={p} range={[0.7, 0.76, 0.98, 1]} eyebrow="Shared opportunity" lime>
             A shared path to incremental value.
           </Caption>
         </div>
@@ -43,8 +43,8 @@ export default function ConnectionScene() {
               />
             </motion.div>
             <motion.div style={{ y: midY, opacity: midO }} className="z-20 -mx-3 w-[28%]">
-              <div className="relative h-full rounded-3xl bg-gradient-to-br from-white via-silver to-gem p-px shadow-[0_30px_80px_-20px_rgba(79,123,255,0.6)]">
-                <div className="flex h-full flex-col justify-between rounded-3xl bg-gradient-to-br from-white to-silver p-5 text-ink md:p-8">
+              <div className="relative h-full rounded-3xl bg-gradient-to-br from-cyan via-cyan to-lime p-px shadow-[0_30px_80px_-20px_rgba(92,225,230,0.6)]">
+                <div className="flex h-full flex-col justify-between rounded-3xl bg-gradient-to-br from-cyan/90 to-lime/90 p-5 text-ink md:p-8">
                   <p className="eyebrow text-[10px] md:text-xs">ADVIO</p>
                   <p className="display text-xl md:text-4xl">The intelligence that connects.</p>
                   <ul className="hidden space-y-1 text-sm font-medium md:block">
@@ -66,7 +66,7 @@ export default function ConnectionScene() {
           </div>
           <motion.div
             style={{ opacity: glow }}
-            className="pointer-events-none absolute -bottom-10 left-1/2 h-24 w-3/4 -translate-x-1/2 rounded-full bg-gem/50 blur-3xl"
+            className="pointer-events-none absolute -bottom-10 left-1/2 h-24 w-3/4 -translate-x-1/2 rounded-full bg-lime/40 blur-3xl"
           />
         </motion.div>
 
@@ -82,7 +82,7 @@ export default function ConnectionScene() {
 function Block({ label, title, body, gradient }: { label: string; title: string; body: string; gradient: string }) {
   return (
     <div className={`flex h-full min-h-[240px] flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br ${gradient} p-5 md:min-h-[340px] md:p-8`}>
-      <p className="eyebrow text-[10px] text-steel md:text-xs">{label}</p>
+      <p className="eyebrow text-[10px] text-cyan md:text-xs">{label}</p>
       <div>
         <p className="display text-lg text-white md:text-3xl">{title}</p>
         <p className="mt-4 hidden text-sm leading-relaxed text-white/70 md:block">{body}</p>
@@ -96,20 +96,20 @@ function Caption({
   range,
   eyebrow,
   children,
-  gem,
+  lime,
 }: {
   p: MotionValue<number>;
   range: [number, number, number, number];
   eyebrow: string;
   children: React.ReactNode;
-  gem?: boolean;
+  lime?: boolean;
 }) {
   const opacity = useTransform(p, range, [0, 1, 1, 0]);
   const y = useTransform(p, range, [40, 0, 0, -40]);
   return (
     <motion.div style={{ opacity, y }} className="absolute inset-x-0 top-0">
-      <p className="eyebrow mb-4 text-steel">{eyebrow}</p>
-      <h2 className={`display text-4xl md:text-7xl ${gem ? "text-gem" : "text-white"}`}>{children}</h2>
+      <p className="eyebrow mb-4 text-cyan">{eyebrow}</p>
+      <h2 className={`display text-4xl md:text-7xl ${lime ? "text-lime" : "text-white"}`}>{children}</h2>
     </motion.div>
   );
 }

@@ -9,8 +9,8 @@ export default function CtaBand({
   body?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-[#e9edf4] text-ink">
-      <div className="absolute -right-40 -top-40 h-[40rem] w-[40rem] rounded-full bg-gem/35 blur-3xl" />
+    <section className="relative overflow-hidden bg-lime text-ink">
+      <div className="absolute -right-40 -top-40 h-[40rem] w-[40rem] rounded-full bg-cyan/50 blur-3xl" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-5 py-28 md:flex-row md:items-end md:justify-between md:px-10 md:py-36">
         <Reveal>
           <h2 className="display max-w-3xl text-6xl md:text-8xl">{title}</h2>

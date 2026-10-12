@@ -12,9 +12,8 @@ export default function Broadcasters() {
     <>
       <PageHero
         eyebrow="For broadcasters"
-        title="Put inventory"
-        accent="potential to work."
-        pose={{ rotation: [0.2, 0.6, Math.PI / 4], scale: 0.95 }}
+        title="Your inventory."
+        accent="More of its value."
         body="Keep commercial authority over every commitment while exploring the value in impressions that fall outside an advertiser's intended audience."
         cta={{ label: "Explore a broadcaster partnership", href: "/contact?role=broadcaster" }}
       />

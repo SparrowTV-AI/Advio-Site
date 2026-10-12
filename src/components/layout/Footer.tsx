@@ -20,16 +20,16 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <p className="eyebrow mb-2 text-white/40">Explore</p>
               {nav.map((n) => (
-                <Link key={n.href} href={n.href} className="text-white/80 hover:text-gem">
+                <Link key={n.href} href={n.href} className="text-white/80 hover:text-lime">
                   {n.label}
                 </Link>
               ))}
             </div>
             <div className="flex flex-col gap-3">
               <p className="eyebrow mb-2 text-white/40">Engage</p>
-              <Link href="/model" className="text-white/80 hover:text-gem">Model your opportunity</Link>
-              <Link href="/contact" className="text-white/80 hover:text-gem">Request a working session</Link>
-              <a href={`mailto:${site.email}`} className="text-white/80 hover:text-gem">{site.email}</a>
+              <Link href="/model" className="text-white/80 hover:text-lime">Model your opportunity</Link>
+              <Link href="/contact" className="text-white/80 hover:text-lime">Request a working session</Link>
+              <a href={`mailto:${site.email}`} className="text-white/80 hover:text-lime">{site.email}</a>
             </div>
           </div>
         </div>
