@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 export function SectionHeading({
@@ -43,16 +44,20 @@ export function FeatureGrid({
   items,
   tone = "dark",
 }: {
-  items: { title: string; body: string }[];
+  items: { title: string; body: string; icon?: string }[];
   tone?: "dark" | "light";
 }) {
+  const cols = items.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
   const light = tone === "light";
   return (
-    <div className="mt-16 grid gap-px overflow-hidden rounded-3xl md:grid-cols-3" style={{ background: light ? "rgba(5,11,22,0.08)" : "var(--color-line)" }}>
+    <div className={`mt-16 grid gap-px overflow-hidden rounded-3xl ${cols}`} style={{ background: light ? "rgba(5,11,22,0.08)" : "var(--color-line)" }}>
       {items.map((it, i) => (
         <Reveal key={it.title} delay={i * 0.08} className={light ? "bg-paper" : "bg-navy"}>
           <div className="h-full p-8 md:p-10">
-            <span className={`display text-sm ${light ? "text-electric" : "text-lime"}`}>0{i + 1}</span>
+            <div className="flex items-center justify-between">
+              <span className={`display text-sm ${light ? "text-electric" : "text-lime"}`}>0{i + 1}</span>
+              {it.icon && <Image src={it.icon} alt="" width={48} height={48} className={`h-12 w-12 object-contain ${light ? "" : "invert"}`} />}
+            </div>
             <h3 className={`mt-6 text-2xl font-semibold tracking-tight ${light ? "text-ink" : "text-white"}`}>{it.title}</h3>
             <p className={`mt-4 leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{it.body}</p>
           </div>

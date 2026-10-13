@@ -64,7 +64,7 @@ export default function Nav() {
             className="overflow-hidden lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 pb-8">
-              {[...nav, { label: "Model your opportunity", href: "/model" }].map((n) => (
+              {nav.map((n) => (
                 <Link key={n.href} href={n.href} className="display py-3 text-3xl text-white">
                   {n.label}
                 </Link>

@@ -1,38 +1,26 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
-import OperatingModel from "@/components/home/OperatingModel";
+import ImageHero from "@/components/sections/ImageHero";
+import StepsScroll from "@/components/sections/StepsScroll";
+import Figure from "@/components/sections/Figure";
 import { Container, FeatureGrid, SectionHeading } from "@/components/ui/Section";
 import CtaBand from "@/components/ui/CtaBand";
+import { adglean } from "@/lib/content";
 
-export const metadata: Metadata = { title: "AdGlean" };
+export const metadata: Metadata = { title: "AdGlean Technology" };
 
-export default function AdGlean() {
+export default function Page() {
   return (
     <>
-      <PageHero
-        eyebrow="AdGlean by ADVIO"
-        title="Intelligence in"
-        accent="every impression."
-        body="Detect the ad. Evaluate the audience and permissions. Keep the original commitment or activate an eligible replacement. See how ADVIO, broadcasters and distributors each participate."
-        cta={{ label: "Request a working session", href: "/contact" }}
-      />
-      <OperatingModel />
-      <section className="bg-ink py-28 md:py-40">
+      <ImageHero eyebrow={adglean.hero.eyebrow} title={adglean.hero.title} body={adglean.hero.body} ctas={[adglean.hero.cta]} image={adglean.hero.image} tall={false} />
+      <StepsScroll id="how" eyebrow={adglean.how.eyebrow} title={adglean.how.title} body={adglean.how.body} steps={adglean.how.steps} />
+      <Figure {...adglean.path} alt="AdGlean impression decision flow" />
+      <section className="bg-paper py-24 text-ink md:py-32">
         <Container>
-          <SectionHeading
-            eyebrow="Who does what"
-            title="Three roles. One operating model."
-            body="AdGlean coordinates the decisions — the parties keep their responsibilities."
-          />
-          <FeatureGrid
-            items={[
-              { title: "Broadcasters", body: "Authorize eligible inventory, set advertiser rules and campaign restrictions, and define what value means for the business." },
-              { title: "ADVIO", body: "Provides the eligibility, activation and measurement intelligence that connects inventory authority with delivery capability." },
-              { title: "Distributors", body: "Enable supported delivery, establish integration requirements and define commercial participation." },
-            ]}
-          />
+          <SectionHeading tone="light" eyebrow={adglean.safeguards.eyebrow} title={adglean.safeguards.title} body={adglean.safeguards.body} />
+          <FeatureGrid tone="light" items={adglean.safeguards.items} />
         </Container>
       </section>
+      <Figure {...adglean.fits} alt="Broadcasters, Advio + AdGlean, and distributors" />
       <CtaBand />
     </>
   );

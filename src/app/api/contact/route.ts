@@ -1,26 +1,16 @@
 import { NextResponse } from "next/server";
 
 /**
- * Contact form handler.
- * Set RESEND_API_KEY and CONTACT_TO (and optionally CONTACT_FROM) in Vercel → Settings → Environment Variables
+ * Contact form handler. Set RESEND_API_KEY and CONTACT_TO (optionally CONTACT_FROM) in Vercel
  * to deliver submissions by email. Without them, submissions are logged to the server console.
  */
 export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   if (!body || body.website) return NextResponse.json({ ok: true }); // honeypot
-  const { name, email, company, title, message, role, model } = body;
-  if (!name || !email || !company) return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+  const { name, email, phone, comment } = body;
+  if (!email) return NextResponse.json({ error: "Email is required" }, { status: 400 });
 
-  const text = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Company: ${company}`,
-    `Title: ${title ?? ""}`,
-    `Role: ${role}`,
-    "",
-    message ?? "",
-    model ? `\nModeled inputs: ${JSON.stringify(model)}` : "",
-  ].join("\n");
+  const text = [`Name: ${name ?? ""}`, `Email: ${email}`, `Phone: ${phone ?? ""}`, "", comment ?? ""].join("\n");
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
@@ -28,15 +18,14 @@ export async function POST(req: Request) {
     console.log("[contact] submission (email not configured):\n" + text);
     return NextResponse.json({ ok: true });
   }
-
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM ?? "ADVIO Website <onboarding@resend.dev>",
+      from: process.env.CONTACT_FROM ?? "Advio Website <onboarding@resend.dev>",
       to: [to],
       reply_to: email,
-      subject: `Working session request — ${company} (${role})`,
+      subject: `Website inquiry — ${name || email}`,
       text,
     }),
   });

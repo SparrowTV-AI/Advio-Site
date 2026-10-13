@@ -1,18 +1,17 @@
 export const site = {
-  name: "ADVIO",
+  name: "Advio",
   tagline: "Television, connected.",
   description:
-    "ADVIO connects broadcasters and distributors around eligible advertising opportunities — the intelligence, activation and measurement that turn one commercial into more value for both sides.",
+    "Advio connects broadcasters and distributors to unlock new advertising opportunities within existing television inventory. Powered by AdGlean.",
   email: "hello@advio.tv",
-  formerly: "Formerly SparrowTV",
 };
 
 export const nav = [
   { label: "Broadcasters", href: "/broadcasters" },
   { label: "Distributors", href: "/distributors" },
-  { label: "AdGlean", href: "/adglean" },
-  { label: "Measurement", href: "/measurement" },
-  { label: "Company", href: "/company" },
+  { label: "AdGlean Technology", href: "/adglean" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
-export const cta = { label: "Request a working session", href: "/contact" };
+export const cta = { label: "Schedule a working session", href: "/contact" };

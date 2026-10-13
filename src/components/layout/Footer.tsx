@@ -9,12 +9,11 @@ export default function Footer() {
         <div className="grid gap-16 md:grid-cols-[1.4fr_1fr]">
           <div>
             <Logo />
-            <p className="display mt-10 text-5xl text-white md:text-7xl">
-              Television,
-              <br />
-              <span className="text-gradient">connected.</span>
+            <p className="display mt-10 max-w-2xl text-4xl text-white md:text-6xl">
+              Unlock more value from the television
+              <span className="text-gradient"> you already deliver.</span>
             </p>
-            <p className="mt-6 text-muted">Inventory. Intelligence. Delivery. Shared opportunity.</p>
+            <p className="mt-6 max-w-md text-muted">{site.description}</p>
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm">
             <div className="flex flex-col gap-3">
@@ -27,15 +26,14 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-3">
               <p className="eyebrow mb-2 text-white/40">Engage</p>
-              <Link href="/model" className="text-white/80 hover:text-lime">Model your opportunity</Link>
-              <Link href="/contact" className="text-white/80 hover:text-lime">Request a working session</Link>
+              <Link href="/contact" className="text-white/80 hover:text-lime">Schedule a working session</Link>
               <a href={`mailto:${site.email}`} className="text-white/80 hover:text-lime">{site.email}</a>
             </div>
           </div>
         </div>
         <div className="mt-24 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row">
-          <p>© {new Date().getFullYear()} ADVIO. All rights reserved.</p>
-          <p>{site.formerly}</p>
+          <p>© {new Date().getFullYear()} Advio. All rights reserved.</p>
+          <p>Powered by AdGlean</p>
         </div>
       </div>
       <p
