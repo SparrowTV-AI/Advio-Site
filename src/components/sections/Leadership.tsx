@@ -18,7 +18,7 @@ export default function LeadershipGroups({ groups }: { groups: { name: string; p
               <span className="text-sm text-white/40">{String(g.people.length).padStart(2, "0")}</span>
             </div>
           </Reveal>
-          <div className={`mt-10 grid gap-6 ${g.people.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+          <div className={`mt-10 grid gap-6 ${g.people.length % 2 === 0 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
             {g.people.map((p, i) => {
               const isOpen = open === p.name;
               const initials = p.name.split(" ").map((n) => n[0]).join("");

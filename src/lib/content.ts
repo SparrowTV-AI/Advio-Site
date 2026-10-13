@@ -266,6 +266,15 @@ export const leadership = {
           photo: img("1575919411901.jpg"), role: "CFO / COO", bio: ["Finance and operations executive with leadership experience spanning high-growth startups and established brands, including MedCo, Stumptown Coffee, and Viewpoint (acquired by Trimble). Lewis specializes in scaling organizations and driving operational excellence."] },
         { name: "Gazit Ovadia",
           photo: img("unnamed-1.jpg"), role: "Founding Member & CPO", bio: ["AdTech executive with expertise spanning demand-side, supply-side, retail media, and audience data. Built and scaled Rakuten Advertising's ad exchange and retail media businesses, increasing monthly revenue 55× in two years, with previous product and engineering leadership roles at Sizmek, Peer39, and Verint."] },
+        {
+          name: "Brandon Rockwood",
+          photo: img("brandon-rockwood.jpg"),
+          role: "Head of Business Development",
+          bio: [
+            "Brandon Rockwood is a business development and sales leader with more than 15 years of experience building revenue systems, developing strategic partnerships, and bringing emerging opportunities to market. At Advio, he leads business development efforts focused on building relationships with media companies, sports organizations, distributors, and strategic design partners.",
+            "Known for seeing the bigger picture and creating strong, trusted relationships, Brandon helps partners identify practical ways Advio’s technology can improve advertising performance, unlock the value of underutilized inventory, and generate new revenue. His ability to simplify complex ideas and turn them into clear business opportunities supports Advio’s go-to-market strategy and continued growth.",
+          ],
+        },
         { name: "Garrett Daw",
           photo: img("1783531196019.png"), role: "Head of Corporate Development", bio: ["Entrepreneur and media executive with a track record of building and scaling technology companies. Founder and CEO of Lyfe Communications and sales leader at USDTV, one of the first U.S. OTT platforms, helping drive early innovation in digital television."] },
       ],
