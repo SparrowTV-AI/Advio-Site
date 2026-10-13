@@ -42,9 +42,9 @@ export default function Calculator() {
 
   const funnel = [
     { label: "All impressions", value: v.impressions, color: "bg-electric" },
-    { label: "Outside intended audience", value: r.outside, color: "bg-cyan" },
-    { label: "Eligible", value: r.eligible, color: "bg-cyan/70" },
-    { label: "Filled with approved demand", value: r.filled, color: "bg-lime" },
+    { label: "Outside intended audience", value: r.outside, color: "bg-steel" },
+    { label: "Eligible", value: r.eligible, color: "bg-steel/70" },
+    { label: "Filled with approved demand", value: r.filled, color: "bg-gem" },
   ];
 
   const query = new URLSearchParams({ source: "model", impressions: String(v.impressions), net: String(Math.round(r.net)) });
@@ -56,7 +56,7 @@ export default function Calculator() {
           <label key={f.key} className="block">
             <div className="flex items-baseline justify-between gap-4">
               <span className="font-semibold text-white">{f.label}</span>
-              <span className="display text-xl text-lime">{f.fmt(v[f.key])}</span>
+              <span className="display text-xl text-gem">{f.fmt(v[f.key])}</span>
             </div>
             <p className="mb-3 mt-1 text-xs text-white/45">{f.hint}</p>
             <input
@@ -74,7 +74,7 @@ export default function Calculator() {
 
       <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
         <div className="rounded-3xl bg-gradient-to-br from-navy-3 to-navy p-7 md:p-10">
-          <p className="eyebrow text-cyan">Estimated monthly net value</p>
+          <p className="eyebrow text-steel">Estimated monthly net value</p>
           <motion.p key={Math.round(r.net)} initial={{ opacity: 0.4, y: 6 }} animate={{ opacity: 1, y: 0 }} className="display mt-4 text-6xl text-white md:text-7xl">
             {money(r.net)}
           </motion.p>
@@ -82,11 +82,11 @@ export default function Calculator() {
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="rounded-2xl bg-white/5 p-5">
               <p className="text-xs text-white/50">Broadcaster</p>
-              <p className="display mt-1 text-3xl text-lime">{money(r.b)}</p>
+              <p className="display mt-1 text-3xl text-gem">{money(r.b)}</p>
             </div>
             <div className="rounded-2xl bg-white/5 p-5">
               <p className="text-xs text-white/50">Distributor</p>
-              <p className="display mt-1 text-3xl text-cyan">{money(r.d)}</p>
+              <p className="display mt-1 text-3xl text-steel">{money(r.d)}</p>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Calculator() {
           </div>
         </div>
 
-        <Link href={`/contact?${query}`} className="rounded-full bg-lime px-6 py-4 text-center font-semibold text-ink transition-colors hover:bg-white">
+        <Link href={`/contact?${query}`} className="rounded-full bg-white px-6 py-4 text-center font-semibold text-ink transition-colors hover:bg-silver">
           Validate these numbers with us →
         </Link>
         <p className="text-xs leading-relaxed text-white/40">

@@ -7,9 +7,9 @@ export const metadata: Metadata = { title: "Model your opportunity" };
 export default function ModelPage() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-ink pb-32 pt-36">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(59,79,245,0.35),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(79,123,255,0.35),transparent_55%)]" />
       <Container className="relative">
-        <p className="eyebrow mb-6 text-cyan">Partner-specific economics</p>
+        <p className="eyebrow mb-6 text-steel">Partner-specific economics</p>
         <h1 className="display max-w-4xl text-6xl text-white md:text-8xl">
           Start with <span className="text-gradient">your numbers.</span>
         </h1>

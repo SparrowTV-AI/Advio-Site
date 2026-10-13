@@ -30,13 +30,13 @@ export default function ContactForm() {
 
   if (state === "sent")
     return (
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-3xl bg-lime p-12 text-ink">
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-3xl bg-white p-12 text-ink">
         <p className="display text-5xl">Thank you.</p>
         <p className="mt-4 text-lg">We&apos;ll be in touch shortly to set up a working session.</p>
       </motion.div>
     );
 
-  const input = "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-white placeholder:text-white/30 outline-none transition focus:border-lime";
+  const input = "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-white placeholder:text-white/30 outline-none transition focus:border-gem";
   return (
     <form onSubmit={submit} className="space-y-6 rounded-3xl border border-white/10 bg-navy p-7 md:p-10">
       <fieldset>
@@ -47,7 +47,7 @@ export default function ContactForm() {
               type="button"
               key={r.v}
               onClick={() => setRole(r.v)}
-              className={`rounded-full px-4 py-2 text-sm transition ${role === r.v ? "bg-lime text-ink" : "border border-white/15 text-white/80 hover:border-white/40"}`}
+              className={`rounded-full px-4 py-2 text-sm transition ${role === r.v ? "bg-white text-ink" : "border border-white/15 text-white/80 hover:border-white/40"}`}
             >
               {r.l}
             </button>
@@ -68,11 +68,11 @@ export default function ContactForm() {
       />
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
       {fromModel && (
-        <p className="text-xs text-cyan">Your modeled inputs will be attached to this request.</p>
+        <p className="text-xs text-steel">Your modeled inputs will be attached to this request.</p>
       )}
       <button
         disabled={state === "sending"}
-        className="w-full rounded-full bg-lime px-6 py-4 font-semibold text-ink transition hover:bg-white disabled:opacity-60"
+        className="w-full rounded-full bg-white px-6 py-4 font-semibold text-ink transition hover:bg-silver disabled:opacity-60"
       >
         {state === "sending" ? "Sending…" : "Request a working session →"}
       </button>

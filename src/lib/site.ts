@@ -10,9 +10,9 @@ export const site = {
 export const nav = [
   { label: "Broadcasters", href: "/broadcasters" },
   { label: "Distributors", href: "/distributors" },
-  { label: "AdGlean", href: "/adglean" },
+  { label: "How it works", href: "/how-it-works" },
   { label: "Measurement", href: "/measurement" },
   { label: "Company", href: "/company" },
 ];
 
-export const cta = { label: "Request a working session", href: "/contact" };
+export const cta = { label: "Discuss a pilot", href: "/contact" };

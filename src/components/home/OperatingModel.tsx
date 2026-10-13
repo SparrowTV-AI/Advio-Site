@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Button from "@/components/ui/Button";
 
 const cards = [
-  { n: "01", t: "Detect", b: "Identify the commercial as it airs inside the partner environment.", accent: "text-cyan" },
-  { n: "02", t: "Evaluate", b: "Check the household against the intended audience, inventory permissions and campaign rules.", accent: "text-cyan" },
+  { n: "01", t: "Detect", b: "Identify the commercial as it airs inside the partner environment.", accent: "text-steel" },
+  { n: "02", t: "Evaluate", b: "Check the household against the intended audience, inventory permissions and campaign rules.", accent: "text-steel" },
   { n: "03", t: "Protect", b: "Inside the intended audience? The original commitment runs exactly as agreed.", accent: "text-white" },
-  { n: "04", t: "Activate", b: "Outside it and eligible? An approved replacement can be activated — measured and shared.", accent: "text-lime" },
+  { n: "04", t: "Activate", b: "Outside it and eligible? An approved replacement can be activated — measured and shared.", accent: "text-gem" },
   { n: "05", t: "Fallback", b: "When no qualified replacement can proceed, the original advertisement is retained.", accent: "text-white" },
 ];
 
@@ -37,7 +37,7 @@ export default function OperatingModel() {
             </div>
           ))}
           <div className="flex w-[70vw] shrink-0 items-center md:w-[30vw]">
-            <Button href="/adglean" variant="dark">See how AdGlean works</Button>
+            <Button href="/how-it-works" variant="dark">See how AdGlean works</Button>
           </div>
         </motion.div>
       </div>

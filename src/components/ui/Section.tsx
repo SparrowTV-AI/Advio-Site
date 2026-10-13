@@ -18,7 +18,7 @@ export function SectionHeading({
     <div className={`max-w-4xl ${className}`}>
       {eyebrow && (
         <Reveal>
-          <p className={`eyebrow mb-5 ${light ? "text-electric" : "text-cyan"}`}>{eyebrow}</p>
+          <p className={`eyebrow mb-5 ${light ? "text-electric" : "text-steel"}`}>{eyebrow}</p>
         </Reveal>
       )}
       <Reveal delay={0.05}>
@@ -52,7 +52,7 @@ export function FeatureGrid({
       {items.map((it, i) => (
         <Reveal key={it.title} delay={i * 0.08} className={light ? "bg-paper" : "bg-navy"}>
           <div className="h-full p-8 md:p-10">
-            <span className={`display text-sm ${light ? "text-electric" : "text-lime"}`}>0{i + 1}</span>
+            <span className={`display text-sm ${light ? "text-electric" : "text-gem"}`}>0{i + 1}</span>
             <h3 className={`mt-6 text-2xl font-semibold tracking-tight ${light ? "text-ink" : "text-white"}`}>{it.title}</h3>
             <p className={`mt-4 leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{it.body}</p>
           </div>

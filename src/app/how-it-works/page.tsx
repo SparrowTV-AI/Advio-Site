@@ -4,9 +4,9 @@ import OperatingModel from "@/components/home/OperatingModel";
 import { Container, FeatureGrid, SectionHeading } from "@/components/ui/Section";
 import CtaBand from "@/components/ui/CtaBand";
 
-export const metadata: Metadata = { title: "AdGlean" };
+export const metadata: Metadata = { title: "How it works" };
 
-export default function AdGlean() {
+export default function HowItWorks() {
   return (
     <>
       <PageHero

@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #050b16;
-  --color-navy: #07142a;
-  --color-navy-2: #0c1f3d;
-  --color-navy-3: #13305a;
-  --color-line: rgba(160, 190, 255, 0.14);
-  --color-lime: #d4ff4f;
-  --color-lime-2: #b8f02a;
-  --color-cyan: #5ce1e6;
-  --color-electric: #3b4ff5;
-  --color-mist: #e9f0fc;
-  --color-paper: #f6f9fe;
-  --color-muted: #9fb2d4;
+  --color-ink: #121a2b;
+  --color-navy: #172036;
+  --color-navy-2: #1d2841;
+  --color-navy-3: #27355a;
+  --color-line: rgba(200, 212, 235, 0.12);
+  --color-gem: #4f7bff;
+  --color-gem-2: #2f5bff;
+  --color-steel: #9fb4ff;
+  --color-silver: #c9d1de;
+  --color-electric: #3d6bff;
+  --color-mist: #edf1f7;
+  --color-paper: #f5f7fb;
+  --color-muted: #a3aec4;
 
   --font-sans: "Inter Variable", system-ui, sans-serif;
 
@@ -40,15 +41,15 @@ body {
 }
 
 ::selection {
-  background: var(--color-lime);
-  color: var(--color-ink);
+  background: var(--color-gem);
+  color: #fff;
 }
 
 .display {
   font-family: "Inter Tight Variable", "Inter Variable", sans-serif;
   letter-spacing: -0.035em;
-  line-height: 0.95;
-  font-weight: 700;
+  line-height: 0.98;
+  font-weight: 500;
 }
 
 .eyebrow {
@@ -59,7 +60,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(100deg, var(--color-cyan) 0%, var(--color-lime) 90%);
+  background: linear-gradient(100deg, #ffffff 0%, #8e99ae 75%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -98,5 +99,5 @@ body {
 }
 
 input[type="range"] {
-  accent-color: var(--color-lime);
+  accent-color: var(--color-gem);
 }
