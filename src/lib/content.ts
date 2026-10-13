@@ -271,8 +271,7 @@ export const leadership = {
           photo: img("brandon-rockwood.jpg"),
           role: "Head of Business Development",
           bio: [
-            "Brandon Rockwood is a business development and sales leader with more than 15 years of experience building revenue systems, developing strategic partnerships, and bringing emerging opportunities to market. At Advio, he leads business development efforts focused on building relationships with media companies, sports organizations, distributors, and strategic design partners.",
-            "Known for seeing the bigger picture and creating strong, trusted relationships, Brandon helps partners identify practical ways Advio’s technology can improve advertising performance, unlock the value of underutilized inventory, and generate new revenue. His ability to simplify complex ideas and turn them into clear business opportunities supports Advio’s go-to-market strategy and continued growth.",
+            "Business development and sales executive with more than 15 years of experience building revenue systems, sales teams, and strategic partnerships. Former Vice President of Business Strategy at Alder Holdings and President of Sorce Energy Solutions, with 2016 Gold and Silver Stevie Awards for sales and customer service. Brandon leads partnerships with media companies, sports organizations, and distributors.",
           ],
         },
         { name: "Garrett Daw",
