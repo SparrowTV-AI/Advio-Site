@@ -7,10 +7,19 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   if (!body || body.website) return NextResponse.json({ ok: true }); // honeypot
-  const { name, email, phone, comment } = body;
+  const { name, email, phone, company, title, role, message, comment } = body;
   if (!email) return NextResponse.json({ error: "Email is required" }, { status: 400 });
 
-  const text = [`Name: ${name ?? ""}`, `Email: ${email}`, `Phone: ${phone ?? ""}`, "", comment ?? ""].join("\n");
+  const text = [
+    `Name: ${name ?? ""}`,
+    `Email: ${email}`,
+    `Company: ${company ?? ""}`,
+    `Title: ${title ?? ""}`,
+    `Role: ${role ?? ""}`,
+    `Phone: ${phone ?? ""}`,
+    "",
+    message ?? comment ?? "",
+  ].join("\n");
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;

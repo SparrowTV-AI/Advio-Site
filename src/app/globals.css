@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #050b16;
-  --color-navy: #07142a;
-  --color-navy-2: #0c1f3d;
-  --color-navy-3: #13305a;
-  --color-line: rgba(160, 190, 255, 0.14);
-  --color-lime: #d4ff4f;
-  --color-lime-2: #b8f02a;
-  --color-cyan: #5ce1e6;
-  --color-electric: #3b4ff5;
-  --color-mist: #e9f0fc;
-  --color-paper: #f6f9fe;
-  --color-muted: #9fb2d4;
+  /* Modern navy: deep, saturated, never washed out */
+  --color-ink: #050a1f;
+  --color-navy: #091233;
+  --color-navy-2: #0e1a45;
+  --color-navy-3: #18295f;
+  --color-line: rgba(150, 175, 255, 0.14);
+  /* "lime" is now an ice-blue accent so every existing accent turns blue */
+  --color-lime: #b9caff;
+  --color-lime-2: #8fa9ff;
+  --color-cyan: #7fa2ff;
+  --color-electric: #3b5bff;
+  --color-gem: #4f7bff;
+  --color-gem-2: #2f5bff;
+  --color-steel: #9fb4ff;
+  --color-silver: #c9d1de;
+  --color-mist: #e9eefb;
+  --color-paper: #f4f7fd;
+  --color-muted: #9aabcf;
 
   --font-sans: "Inter Variable", system-ui, sans-serif;
 
@@ -59,7 +65,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(100deg, var(--color-cyan) 0%, var(--color-lime) 90%);
+  background: linear-gradient(100deg, #ffffff 0%, #b9caff 45%, #7f9cff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -100,3 +106,21 @@ body {
 input[type="range"] {
   accent-color: var(--color-lime);
 }
+
+/* Blue-silver gradient text for key phrases */
+.text-silver {
+  background: linear-gradient(100deg, #e6ecff 0%, #a9bcff 55%, #6f8dff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Modern navy backdrop with V1-style blue glows (no green) */
+.bg-modern {
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 15%, rgba(59, 91, 255, 0.38), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 10% 85%, rgba(127, 162, 255, 0.16), transparent 60%),
+    linear-gradient(180deg, #071036 0%, #050a1f 100%);
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }

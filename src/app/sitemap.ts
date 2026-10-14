@@ -6,7 +6,7 @@ const routes = [
     "/broadcasters",
     "/distributors",
     "/adglean",
-    "/leadership",
+    "/company",
     "/contact",
 ];
 

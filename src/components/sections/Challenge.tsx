@@ -37,7 +37,7 @@ export default function Challenge({ eyebrow, title, body, images }: { eyebrow: s
           <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
             <Image src={images[0]} alt="Traditional television" fill sizes="(min-width: 1024px) 900px, 100vw" className="object-cover" />
           </div>
-          <div className="absolute inset-y-0 w-0.5 bg-lime shadow-[0_0_20px_rgba(212,255,79,0.8)]" style={{ left: `${pos}%` }}>
+          <div className="absolute inset-y-0 w-0.5 bg-lime shadow-[0_0_20px_rgba(127,162,255,0.8)]" style={{ left: `${pos}%` }}>
             <div className="absolute top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-lime text-sm font-bold text-ink">⇆</div>
           </div>
         </motion.div>

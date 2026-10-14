@@ -276,6 +276,11 @@ export const leadership = {
         },
         { name: "Garrett Daw",
           photo: img("1783531196019.png"), role: "Head of Corporate Development", bio: ["Entrepreneur and media executive with a track record of building and scaling technology companies. Founder and CEO of Lyfe Communications and sales leader at USDTV, one of the first U.S. OTT platforms, helping drive early innovation in digital television."] },
+        {
+          name: "Ed Galbraith",
+          role: "VP of Engineering",
+          bio: ["Bio coming soon."],
+        },
       ],
     },
     {

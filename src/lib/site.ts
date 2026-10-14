@@ -7,11 +7,11 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Broadcasters", href: "/broadcasters" },
+  { label: "Broadcast", href: "/broadcasters" },
   { label: "Distributors", href: "/distributors" },
-  { label: "AdGlean Technology", href: "/adglean" },
-  { label: "Leadership", href: "/leadership" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "AdGlean", href: "/adglean" },
+  { label: "Company", href: "/company" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const cta = { label: "Schedule a working session", href: "/contact" };

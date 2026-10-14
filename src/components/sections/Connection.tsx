@@ -19,7 +19,7 @@ export default function Connection({ eyebrow, title, body, items }: { eyebrow: s
         <div ref={ref} className="relative mt-20">
           {/* connecting line */}
           <div className="absolute left-[16%] right-[16%] top-[30%] hidden h-px bg-white/10 md:block">
-            <motion.div style={{ width: line }} className="h-full bg-gradient-to-r from-cyan via-lime to-cyan shadow-[0_0_20px_rgba(212,255,79,0.7)]" />
+            <motion.div style={{ width: line }} className="h-full bg-gradient-to-r from-cyan via-lime to-cyan shadow-[0_0_20px_rgba(127,162,255,0.7)]" />
           </div>
           <div className="relative grid gap-8 md:grid-cols-3">
             {items.map((it, i) => (
