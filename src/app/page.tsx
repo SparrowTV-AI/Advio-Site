@@ -13,11 +13,28 @@ import { home } from "@/lib/content";
 import { DRAFT } from "@/lib/draft";
 
 export default function Home() {
+  const opportunity = <HouseholdsScene key="opportunity" />;
+  const solution = <MeetAdGlean key="solution" eyebrow={home.solution.eyebrow} body={home.solution.body} image={home.solution.image} />;
+  const connection = <ConnectionScene key="connection" />;
+  const smarterPath = (
+    <FeatureSlides key="smarter" eyebrow={home.advantage.eyebrow} title={home.advantage.title} items={home.advantage.items} backdrop={home.advantage.backdrop} />
+  );
+  const how = <OperatingModel key="how" />;
+  const difference = (
+    <Challenge
+      key="difference"
+      eyebrow="See the difference"
+      title="Traditional television vs. AdGlean."
+      body="Drag the slider to compare: the same commercial to every household, or the original ad kept for its audience and new eligible ads for the rest."
+      images={home.challenge.images}
+    />
+  );
+
   return (
     <>
       <Hero />
 
-      {DRAFT === 1 && (
+      {DRAFT === 1 ? (
         <>
           <Marquee items={["Live Sports", "Local News", "Political Advertising", "Premium Live Events"]} />
           <ImageCards
@@ -28,27 +45,12 @@ export default function Home() {
             cards={home.whoWeHelp.sides.map((s) => ({ label: s.eyebrow, title: s.title, body: s.body, image: s.image, cta: s.cta }))}
           />
           <ShowcaseTabs {...home.linear} />
+          {[opportunity, solution, connection, smarterPath, how, difference]}
         </>
+      ) : (
+        // Draft 2 order: Opportunity → Connection → Solution → How AdGlean works → A smarter path → See the difference
+        [opportunity, connection, solution, how, smarterPath, difference]
       )}
-
-      {/* The challenge: households first */}
-      <HouseholdsScene />
-
-      <MeetAdGlean eyebrow={home.solution.eyebrow} body={home.solution.body} image={home.solution.image} />
-
-      <ConnectionScene />
-
-      <FeatureSlides eyebrow={home.advantage.eyebrow} title={home.advantage.title} items={home.advantage.items} backdrop={home.advantage.backdrop} />
-
-      <OperatingModel />
-
-      {/* Before/after slider sits under How AdGlean works */}
-      <Challenge
-        eyebrow="See the difference"
-        title="Traditional television vs. AdGlean."
-        body="Drag the slider to compare: the same commercial to every household, or the original ad kept for its audience and new eligible ads for the rest."
-        images={home.challenge.images}
-      />
 
       <CtaBand />
     </>

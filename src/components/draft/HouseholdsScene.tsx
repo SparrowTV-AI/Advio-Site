@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import { DRAFT } from "@/lib/draft";
 import { motion, useMotionValueEvent, useScroll, useTransform, AnimatePresence } from "motion/react";
 
 const COLS = 25;
@@ -13,7 +14,7 @@ const rank = new Map(order.map((v, i) => [v, i]));
 
 const steps = [
   {
-    eyebrow: "The opportunity",
+    eyebrow: "Today",
     title: "One commercial.",
     body: "Linear television generally delivers the same commercial to every household — 1,000 homes, one ad.",
     stat: "1,000",
@@ -62,9 +63,12 @@ export default function HouseholdsScene() {
   return (
     <section ref={ref} className="relative h-[420vh]">
       <div className="bg-modern sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden">
+        {DRAFT === 1 && (
+          <div aria-hidden className="grid-bg pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_at_50%_55%,black,transparent_72%)]" />
+        )}
         <div className="relative mx-auto w-full max-w-6xl px-5 pt-16 md:px-10">
           {/* Header on top */}
-          <p className="eyebrow mb-4 text-steel">The challenge</p>
+          <p className="eyebrow mb-4 text-steel">The opportunity</p>
           <h2 className="display max-w-4xl text-3xl text-white md:text-5xl">
             Not every household matches the advertiser&apos;s <span className="text-silver">intended audience.</span>
           </h2>

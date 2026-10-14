@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import Button from "@/components/ui/Button";
 import Monolith from "@/components/three/Monolith";
+import { DRAFT } from "@/lib/draft";
 
 const lines = [
   { t: "Unlock more", c: "text-white" },
@@ -21,6 +22,13 @@ export default function Hero() {
     <section ref={ref} className="grain relative flex min-h-[100svh] items-center overflow-hidden pt-24">
       <div className="bg-modern absolute inset-0" />
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink to-transparent" />
+      {DRAFT === 1 && (
+        <div
+          aria-hidden
+          className="grid-bg absolute inset-x-0 bottom-0 h-[70%] opacity-90"
+          style={{ transform: "perspective(900px) rotateX(62deg)", transformOrigin: "bottom", maskImage: "linear-gradient(to top, black, transparent)", WebkitMaskImage: "linear-gradient(to top, black, transparent)" }}
+        />
+      )}
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-6 px-5 md:grid-cols-[1.05fr_1fr] md:px-10">
         <motion.div style={{ opacity: fade, y: lift }} className="relative z-10 order-2 md:order-1">

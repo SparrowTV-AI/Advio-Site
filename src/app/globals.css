@@ -35,6 +35,7 @@
   --navy-3: #18295f;
   --fg: #ffffff;
   --line: rgba(150, 175, 255, 0.14);
+  --grid: rgba(150, 175, 255, 0.22);
   --accent: #b9caff;
   --accent-2: #8fa9ff;
   --cyan: #7fa2ff;
@@ -68,6 +69,7 @@
   --navy-3: #d2dbf3;
   --fg: #0b1533;
   --line: rgba(20, 40, 120, 0.12);
+  --grid: rgba(47, 75, 255, 0.16);
   --accent: #2f4bff;
   --accent-2: #4f6dff;
   --cyan: #3b5bff;
@@ -98,7 +100,7 @@
 
 
 html {
-  background: var(--color-ink);
+  background: var(--ink);
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
 }
@@ -113,13 +115,13 @@ html.lenis body {
 
 body {
   font-family: "Inter Variable", system-ui, sans-serif;
-  background: var(--color-ink);
+  background: var(--ink);
   overflow-x: clip;
 }
 
 ::selection {
-  background: var(--color-lime);
-  color: var(--color-ink);
+  background: var(--accent);
+  color: var(--ink);
 }
 
 .display {
@@ -154,8 +156,8 @@ body {
 
 .grid-bg {
   background-image:
-    linear-gradient(var(--color-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -176,7 +178,7 @@ body {
 }
 
 input[type="range"] {
-  accent-color: var(--color-lime);
+  accent-color: var(--accent);
 }
 
 /* Blue-silver gradient text for key phrases */

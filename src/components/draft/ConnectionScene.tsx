@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import { DRAFT } from "@/lib/draft";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 
 /** Apple-style pinned scene: the two businesses slide together and ADVIO locks in between. */
@@ -18,6 +19,9 @@ export default function ConnectionScene() {
   return (
     <section id="connection" ref={ref} className="relative h-[380vh] bg-ink">
       <div className="bg-modern sticky top-0 flex h-[100svh] flex-col items-center justify-center overflow-hidden pt-20">
+        {DRAFT === 1 && (
+          <div aria-hidden className="grid-bg pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_at_50%_55%,black,transparent_72%)]" />
+        )}
 
         <div className="relative z-10 mb-10 h-40 w-full max-w-4xl px-5 text-center md:mb-16">
           <Caption p={p} range={[0, 0.08, 0.28, 0.36]} eyebrow="The connection that creates opportunity">
