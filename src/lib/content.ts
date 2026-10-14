@@ -278,8 +278,11 @@ export const leadership = {
           photo: img("1783531196019.png"), role: "Head of Corporate Development", bio: ["Entrepreneur and media executive with a track record of building and scaling technology companies. Founder and CEO of Lyfe Communications and sales leader at USDTV, one of the first U.S. OTT platforms, helping drive early innovation in digital television."] },
         {
           name: "Ed Galbraith",
+          photo: img("ed-galbraith.jpg"),
           role: "VP of Engineering",
-          bio: ["Bio coming soon."],
+          bio: [
+            "Technology and engineering executive specializing in streaming media, software development, and regulatory compliance. Previously held leadership roles at Pluto TV, Dish Network, and Property Solutions International, with expertise spanning streaming infrastructure, intellectual property, licensing, and technology strategy. Ed brings a strong combination of technical and legal expertise to Advio's advertising technology platform.",
+          ],
         },
       ],
     },
