@@ -17,7 +17,7 @@ export default function StepsScroll({ eyebrow, title, body, steps, id }: { eyebr
         <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
           <p className="eyebrow mb-5 text-electric">{eyebrow}</p>
           <h2 className="display max-w-4xl text-4xl md:text-6xl">{title}</h2>
-          {body && <p className="mt-6 max-w-2xl text-lg text-slate-600">{body}</p>}
+          {body && <p className="mt-6 max-w-2xl text-lg text-ink/70">{body}</p>}
           <div className="relative mt-14">
             <div className="absolute left-0 right-0 top-0 h-[3px] rounded-full bg-ink/10">
               <motion.div style={{ width: bar }} className="h-full rounded-full bg-electric" />

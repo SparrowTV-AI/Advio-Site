@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Logo from "@/components/ui/Logo";
+import ThemeToggle from "./ThemeToggle";
 import { nav, cta } from "@/lib/site";
 
 export default function Nav() {
@@ -44,9 +45,12 @@ export default function Nav() {
           >
             {cta.label}
           </Link>
+          <ThemeToggle />
         </nav>
+        <div className="flex items-center gap-2 lg:hidden">
+        <ThemeToggle />
         <button
-          className="relative h-10 w-10 lg:hidden"
+          className="relative h-10 w-10"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
@@ -54,6 +58,7 @@ export default function Nav() {
           <span className={`absolute left-2 right-2 h-0.5 bg-white transition-all ${open ? "top-5 rotate-45" : "top-3.5"}`} />
           <span className={`absolute left-2 right-2 h-0.5 bg-white transition-all ${open ? "top-5 -rotate-45" : "top-6"}`} />
         </button>
+        </div>
       </div>
       <AnimatePresence>
         {open && (

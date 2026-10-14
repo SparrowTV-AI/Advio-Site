@@ -9,7 +9,7 @@ export default function CtaBand({
   body?: string;
 }) {
   return (
-    <section className="relative overflow-hidden text-white" style={{ background: "linear-gradient(120deg, #1a2ea8 0%, #2f4bff 55%, #6f8dff 100%)" }}>
+    <section className="force-dark relative overflow-hidden text-white" style={{ background: "linear-gradient(120deg, #1a2ea8 0%, #2f4bff 55%, #6f8dff 100%)" }}>
       <div className="absolute -right-40 -top-40 h-[40rem] w-[40rem] rounded-full bg-white/20 blur-3xl" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-5 py-28 md:flex-row md:items-end md:justify-between md:px-10 md:py-36">
         <Reveal>

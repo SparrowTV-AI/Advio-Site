@@ -47,7 +47,7 @@ export default function ImageCards({
                   )}
                 </div>
                 <h3 className={`mt-6 text-2xl font-semibold tracking-tight md:text-3xl ${light ? "text-ink" : "text-white"}`}>{c.title}</h3>
-                <p className={`mt-3 text-lg leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{c.body}</p>
+                <p className={`mt-3 text-lg leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>{c.body}</p>
                 {c.cta && (
                   <span className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] ${light ? "text-electric" : "text-lime"}`}>
                     {c.cta.label} <span className="transition-transform group-hover:translate-x-1">→</span>

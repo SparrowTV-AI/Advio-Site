@@ -37,6 +37,7 @@ export default function ShowcaseTabs({
 
   return (
     <section className="bg-ink px-3 py-6 md:px-6">
+      <div className="force-dark">
       <div
         className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-navy"
         onMouseEnter={() => setPaused(true)}
@@ -133,6 +134,7 @@ export default function ShowcaseTabs({
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
