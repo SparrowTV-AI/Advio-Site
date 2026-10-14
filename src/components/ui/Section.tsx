@@ -27,7 +27,7 @@ export function SectionHeading({
       </Reveal>
       {body && (
         <Reveal delay={0.12}>
-          <div className={`mt-7 max-w-2xl text-lg leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>
+          <div className={`mt-7 max-w-2xl text-lg leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>
             {body}
           </div>
         </Reveal>
@@ -59,7 +59,7 @@ export function FeatureGrid({
               {it.icon && <Image src={it.icon} alt="" width={48} height={48} className={`h-12 w-12 object-contain ${light ? "" : "invert"}`} />}
             </div>
             <h3 className={`mt-6 text-2xl font-semibold tracking-tight ${light ? "text-ink" : "text-white"}`}>{it.title}</h3>
-            <p className={`mt-4 leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{it.body}</p>
+            <p className={`mt-4 leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>{it.body}</p>
           </div>
         </Reveal>
       ))}

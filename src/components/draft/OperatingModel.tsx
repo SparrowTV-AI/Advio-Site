@@ -63,7 +63,7 @@ export default function OperatingModel() {
           <h2 className="display max-w-3xl text-4xl md:text-6xl">Intelligence that finds opportunity in every impression.</h2>
         </div>
         <div className="flex items-center gap-3">
-          <span className="mr-2 hidden text-sm text-slate-500 md:inline">Swipe or drag to explore 5 steps</span>
+          <span className="mr-2 hidden text-sm text-ink/60 md:inline">Swipe or drag to explore 5 steps</span>
           <Arrow dir={-1} disabled={atStart} onClick={() => go(-1)} />
           <Arrow dir={1} disabled={atEnd} onClick={() => go(1)} />
         </div>
@@ -126,7 +126,7 @@ export default function OperatingModel() {
             className={`h-1.5 rounded-full transition-all duration-500 ${i === Math.min(active, cards.length - 1) ? "w-10 bg-electric" : "w-4 bg-ink/15"}`}
           />
         ))}
-        <span className="ml-3 text-sm text-slate-500 md:hidden">Swipe to explore 5 steps</span>
+        <span className="ml-3 text-sm text-ink/60 md:hidden">Swipe to explore 5 steps</span>
       </div>
       <div className="mt-8 px-5 sm:hidden">
         <Button href="/adglean" variant="dark">See how AdGlean works</Button>

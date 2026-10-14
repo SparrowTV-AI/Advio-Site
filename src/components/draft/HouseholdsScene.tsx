@@ -45,10 +45,10 @@ const steps = [
 function colorFor(step: number, r: number) {
   const intended = r < TOTAL * 0.6;
   const eligible = !intended && r % 2 === 0;
-  if (step === 0) return "#8a96ad";
-  if (step === 1) return intended ? "#dfe5ef" : "#26334d";
-  if (step === 2) return intended ? "#3a4763" : "#9fb4ff";
-  return intended ? "#3a4763" : eligible ? "#4f7bff" : "#55658a";
+  if (step === 0) return "var(--dot-base)";
+  if (step === 1) return intended ? "var(--dot-intended)" : "var(--dot-dim)";
+  if (step === 2) return intended ? "var(--dot-intended-dim)" : "var(--dot-outside)";
+  return intended ? "var(--dot-intended-dim)" : eligible ? "var(--dot-eligible)" : "var(--dot-ineligible)";
 }
 
 export default function HouseholdsScene() {
@@ -117,9 +117,9 @@ export default function HouseholdsScene() {
             })}
           </div>
           <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
-            <Legend c="#dfe5ef" t="Intended audience" />
-            <Legend c="#9fb4ff" t="Outside intended audience" />
-            <Legend c="#4f7bff" t="Eligible opportunity" />
+            <Legend c="var(--dot-intended)" t="Intended audience" />
+            <Legend c="var(--dot-outside)" t="Outside intended audience" />
+            <Legend c="var(--dot-eligible)" t="Eligible opportunity" />
           </div>
           <p className="mt-3 text-xs text-white/35">
             Illustration only — 1,000 households. Not a revenue claim. Out-of-target does not automatically mean eligible.

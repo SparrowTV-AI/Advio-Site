@@ -8,7 +8,7 @@ export default function Faq({ items, tone = "light" }: { items: { q: string; a: 
             {it.q}
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-current/20 text-xl transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p className={`mt-5 max-w-3xl text-lg leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{it.a}</p>
+          <p className={`mt-5 max-w-3xl text-lg leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>{it.a}</p>
         </details>
       ))}
     </div>

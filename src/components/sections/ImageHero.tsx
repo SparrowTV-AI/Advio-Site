@@ -26,7 +26,7 @@ export default function ImageHero({
   const words = title.split(" ");
 
   return (
-    <section ref={ref} className={`grain relative flex items-end overflow-hidden bg-ink pb-20 pt-36 ${tall ? "min-h-[100svh]" : "min-h-[85svh]"}`}>
+    <section ref={ref} className={`force-dark grain relative flex items-end overflow-hidden bg-ink pb-20 pt-36 ${tall ? "min-h-[100svh]" : "min-h-[85svh]"}`}>
       {image ? (
         <motion.div style={{ y }} className="absolute inset-0">
           <motion.div

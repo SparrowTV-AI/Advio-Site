@@ -107,7 +107,7 @@ function Piece({ kind, id, from, to, stroke, glow }: { kind: "left" | "mid" | "r
 
 function PieceText({ label, title, body, dark, right, mid }: { label: string; title: string; body: string; dark?: boolean; right?: boolean; mid?: boolean }) {
   return (
-    <div className={`relative flex h-full flex-col justify-between p-3 sm:p-5 md:p-8 ${right ? "md:pl-12" : ""} ${mid ? "!px-[20%] text-center items-center" : ""} ${dark ? "text-ink" : "text-white"}`}>
+    <div className={`force-dark relative flex h-full flex-col justify-between p-3 sm:p-5 md:p-8 ${right ? "md:pl-12" : ""} ${mid ? "!px-[20%] text-center items-center" : ""} ${dark ? "text-ink" : "text-white"}`}>
       <p className={`eyebrow text-[8px] sm:text-[10px] md:text-xs ${dark ? "text-ink/70" : "text-steel"}`}>{label}</p>
       <div>
         <p className="display text-[11px] leading-tight sm:text-lg md:text-3xl">{title}</p>

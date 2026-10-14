@@ -11,9 +11,8 @@ export default function MeetAdGlean({ eyebrow, body, image }: { eyebrow: string;
   const clip = useTransform(scrollYProgress, [0, 0.35], ["inset(18% 18% 18% 18% round 32px)", "inset(0% 0% 0% 0% round 32px)"]);
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-36" style={{ background: "#071036" }}>
+    <section className="bg-spot relative overflow-hidden py-24 md:py-36">
       {/* blue spotlight */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_70%_45%,rgba(59,91,255,0.55),transparent_65%),radial-gradient(ellipse_40%_40%_at_15%_20%,rgba(127,162,255,0.18),transparent_60%)]" />
       <div ref={ref} className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 md:grid-cols-2 md:px-10">
         <div>
           <Reveal><p className="eyebrow mb-5 text-steel">{eyebrow}</p></Reveal>

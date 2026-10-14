@@ -53,7 +53,7 @@ export default function FeatureSlides({
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h3 className={`display mt-6 text-4xl md:text-5xl ${light ? "text-ink" : "text-white"}`}>{it.title}</h3>
-                  <p className={`mt-5 max-w-md text-lg leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{it.body}</p>
+                  <p className={`mt-5 max-w-md text-lg leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>{it.body}</p>
                 </motion.div>
               </AnimatePresence>
             </div>

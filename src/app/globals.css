@@ -1,33 +1,105 @@
 @import "tailwindcss";
 
-@theme {
-  /* Modern navy: deep, saturated, never washed out */
-  --color-ink: #050a1f;
-  --color-navy: #091233;
-  --color-navy-2: #0e1a45;
-  --color-navy-3: #18295f;
-  --color-line: rgba(150, 175, 255, 0.14);
-  /* "lime" is now an ice-blue accent so every existing accent turns blue */
-  --color-lime: #b9caff;
-  --color-lime-2: #8fa9ff;
-  --color-cyan: #7fa2ff;
+@theme inline {
+  --color-ink: var(--ink);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-3: var(--navy-3);
+  --color-white: var(--fg);
+  --color-line: var(--line);
+  --color-lime: var(--accent);
+  --color-lime-2: var(--accent-2);
+  --color-cyan: var(--cyan);
   --color-electric: #3b5bff;
   --color-gem: #4f7bff;
   --color-gem-2: #2f5bff;
-  --color-steel: #9fb4ff;
-  --color-silver: #c9d1de;
-  --color-mist: #e9eefb;
-  --color-paper: #f4f7fd;
-  --color-muted: #9aabcf;
+  --color-steel: var(--steel);
+  --color-silver: var(--silver);
+  --color-mist: var(--mist);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
 
   --font-sans: "Inter Variable", system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ---------- Theme tokens ----------
+   Dark is the default. Light flips surfaces and text; ".force-dark" pins a block
+   (photo overlays, the blue CTA band) to dark tokens in either theme. */
+:root,
+.force-dark {
+  --ink: #050a1f;
+  --navy: #091233;
+  --navy-2: #0e1a45;
+  --navy-3: #18295f;
+  --fg: #ffffff;
+  --line: rgba(150, 175, 255, 0.14);
+  --accent: #b9caff;
+  --accent-2: #8fa9ff;
+  --cyan: #7fa2ff;
+  --steel: #9fb4ff;
+  --silver: #c9d1de;
+  --mist: #e9eefb;
+  --paper: #f4f7fd;
+  --muted: #9aabcf;
+  --modern-a: rgba(59, 91, 255, 0.38);
+  --modern-b: rgba(127, 162, 255, 0.16);
+  --modern-top: #071036;
+  --modern-bottom: #050a1f;
+  --spot-bg: #071036;
+  --spot-a: rgba(59, 91, 255, 0.55);
+  --dot-base: #8a96ad;
+  --dot-intended: #dfe5ef;
+  --dot-dim: #26334d;
+  --dot-intended-dim: #3a4763;
+  --dot-outside: #9fb4ff;
+  --dot-eligible: #4f7bff;
+  --dot-ineligible: #55658a;
+  --grad-a: #ffffff;
+  --grad-b: #b9caff;
+  --grad-c: #7f9cff;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --ink: #f6f8fd;
+  --navy: #eef2fb;
+  --navy-2: #e4eaf8;
+  --navy-3: #d2dbf3;
+  --fg: #0b1533;
+  --line: rgba(20, 40, 120, 0.12);
+  --accent: #2f4bff;
+  --accent-2: #4f6dff;
+  --cyan: #3b5bff;
+  --steel: #3550e6;
+  --silver: #33415c;
+  --mist: #0c1640;
+  --paper: #0e1a45;
+  --muted: #4b5a7c;
+  --modern-a: rgba(79, 110, 255, 0.22);
+  --modern-b: rgba(127, 162, 255, 0.18);
+  --modern-top: #eaf0ff;
+  --modern-bottom: #f6f8fd;
+  --spot-bg: #e8eeff;
+  --spot-a: rgba(79, 110, 255, 0.35);
+  --dot-base: #9aa6bf;
+  --dot-intended: #1a2a5c;
+  --dot-dim: #d3dbee;
+  --dot-intended-dim: #b8c3dd;
+  --dot-outside: #7f9cff;
+  --dot-eligible: #2f4bff;
+  --dot-ineligible: #a3b0cf;
+  --grad-a: #0b1533;
+  --grad-b: #2f4bff;
+  --grad-c: #6f8dff;
+  color-scheme: light;
+}
+[data-theme="light"] .force-dark { color-scheme: dark; }
+
+
 html {
   background: var(--color-ink);
-  color: #fff;
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -65,7 +137,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(100deg, #ffffff 0%, #b9caff 45%, #7f9cff 100%);
+  background: linear-gradient(100deg, var(--grad-a) 0%, var(--grad-b) 45%, var(--grad-c) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -109,7 +181,7 @@ input[type="range"] {
 
 /* Blue-silver gradient text for key phrases */
 .text-silver {
-  background: linear-gradient(100deg, #e6ecff 0%, #a9bcff 55%, #6f8dff 100%);
+  background: linear-gradient(100deg, var(--grad-a) 0%, var(--grad-b) 55%, var(--grad-c) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -117,10 +189,25 @@ input[type="range"] {
 /* Modern navy backdrop with V1-style blue glows (no green) */
 .bg-modern {
   background:
-    radial-gradient(ellipse 70% 55% at 75% 15%, rgba(59, 91, 255, 0.38), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 10% 85%, rgba(127, 162, 255, 0.16), transparent 60%),
-    linear-gradient(180deg, #071036 0%, #050a1f 100%);
+    radial-gradient(ellipse 70% 55% at 75% 15%, var(--modern-a), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 10% 85%, var(--modern-b), transparent 60%),
+    linear-gradient(180deg, var(--modern-top) 0%, var(--modern-bottom) 100%);
 }
+.bg-spot {
+  background:
+    radial-gradient(ellipse 55% 60% at 70% 45%, var(--spot-a), transparent 65%),
+    radial-gradient(ellipse 40% 40% at 15% 20%, var(--modern-b), transparent 60%),
+    var(--spot-bg);
+}
+html { transition: background-color 0.3s ease; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+/* Light theme: keep the nav readable over dark photo heroes */
+[data-theme="light"] header.fixed {
+  background: rgba(246, 248, 253, 0.82);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(20, 40, 120, 0.08);
+}

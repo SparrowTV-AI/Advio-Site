@@ -39,7 +39,7 @@ export default function ImageSplit({
           {subtitle && <Reveal delay={0.08}><p className={`mt-6 text-2xl font-semibold ${light ? "text-electric" : "text-lime"}`}>{subtitle}</p></Reveal>}
           {paragraphs.map((p, i) => (
             <Reveal key={i} delay={0.1 + i * 0.05}>
-              <p className={`mt-6 text-lg leading-relaxed ${light ? "text-slate-600" : "text-muted"}`}>{p}</p>
+              <p className={`mt-6 text-lg leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>{p}</p>
             </Reveal>
           ))}
           {cta && <Reveal delay={0.2} className="mt-10"><Button href={cta.href}>{cta.label}</Button></Reveal>}
