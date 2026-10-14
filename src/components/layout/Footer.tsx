@@ -33,6 +33,12 @@ export default function Footer() {
         </div>
         <div className="mt-24 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row">
           <p>© {new Date().getFullYear()} Advio. All rights reserved.</p>
+          {/* Legal links: add hrefs once the pages exist */}
+          <ul className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Legal">
+            <li>Legal</li>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+          </ul>
           <p>Powered by AdGlean</p>
         </div>
       </div>
