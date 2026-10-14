@@ -50,7 +50,7 @@ export function FeatureGrid({
   const cols = items.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
   const light = tone === "light";
   return (
-    <div className={`mt-16 grid gap-px overflow-hidden rounded-3xl ${cols}`} style={{ background: light ? "rgba(5,11,22,0.08)" : "var(--color-line)" }}>
+    <div className={`mt-16 grid gap-px overflow-hidden rounded-3xl ${cols}`} style={{ background: light ? "rgba(5,11,22,0.08)" : "var(--line)" }}>
       {items.map((it, i) => (
         <Reveal key={it.title} delay={i * 0.08} className={light ? "bg-paper" : "bg-navy"}>
           <div className="h-full p-8 md:p-10">
