@@ -10,32 +10,38 @@ export type MonolithPose = {
   scale?: number;
 };
 
-/** Builds the ADVIO mark: a rounded square with a circular bite in one corner. */
+/**
+ * Builds the ADVIO mark: a slightly rounded square (shown rotated 45° as a diamond)
+ * with a circular bite in its upper-right edge, like the logo.
+ */
+const BITE = { cx: 0.6, r: 0.56 };
 function useMarkGeometry() {
   return useMemo(() => {
-    const R = 0.38; // corner radius
-    const cx = 0.75, cy = 0.75, r = 0.75; // bite circle
-    const yHit = cy - Math.sqrt(r * r - (1 - cx) ** 2);
-    const xHit = cx - Math.sqrt(r * r - (1 - cy) ** 2);
+    const R = 0.2; // corner radius
+    const { cx, r } = BITE; // bite circle centred on the +x edge
+    const yh = Math.sqrt(r * r - (1 - cx) ** 2);
+    const a = Math.atan2(yh, 1 - cx);
     const s = new THREE.Shape();
     s.moveTo(-1 + R, -1);
     s.lineTo(1 - R, -1);
     s.quadraticCurveTo(1, -1, 1, -1 + R);
-    s.lineTo(1, yHit);
-    s.absarc(cx, cy, r, Math.atan2(yHit - cy, 1 - cx), Math.atan2(1 - cy, xHit - cx), true);
+    s.lineTo(1, -yh);
+    s.absarc(cx, 0, r, -a, a, true);
+    s.lineTo(1, 1 - R);
+    s.quadraticCurveTo(1, 1, 1 - R, 1);
     s.lineTo(-1 + R, 1);
     s.quadraticCurveTo(-1, 1, -1, 1 - R);
     s.lineTo(-1, -1 + R);
     s.quadraticCurveTo(-1, -1, -1 + R, -1);
     const g = new THREE.ExtrudeGeometry(s, {
-      depth: 0.7,
+      depth: 0.6,
       bevelEnabled: true,
-      bevelThickness: 0.16,
-      bevelSize: 0.14,
+      bevelThickness: 0.14,
+      bevelSize: 0.1,
       bevelSegments: 12,
       curveSegments: 64,
     });
-    g.translate(0, 0, -0.35);
+    g.translate(0, 0, -0.3);
     g.computeVertexNormals();
     return g;
   }, []);
@@ -56,7 +62,7 @@ function Mark({ pose }: { pose: MonolithPose }) {
   const gem = useRef<THREE.Mesh>(null);
   const geometry = useMarkGeometry();
   const diamond = useDiamondGeometry();
-  const base = pose.rotation ?? [0.1, -0.38, 0.62];
+  const base = pose.rotation ?? [0.08, -0.22, Math.PI / 4];
 
   useFrame((state) => {
     if (!group.current) return;
@@ -65,7 +71,7 @@ function Mark({ pose }: { pose: MonolithPose }) {
     const { x, y } = state.pointer;
     const g = group.current;
     g.rotation.x = THREE.MathUtils.lerp(g.rotation.x, base[0] - y * 0.15 + Math.sin(t * 0.4) * 0.04, 0.05);
-    g.rotation.y = THREE.MathUtils.lerp(g.rotation.y, base[1] + x * 0.25 + scroll * 0.9, 0.05);
+    g.rotation.y = THREE.MathUtils.lerp(g.rotation.y, base[1] + x * 0.2 + scroll * 0.6, 0.05);
     g.rotation.z = base[2];
     g.position.y = (pose.position?.[1] ?? 0) + Math.sin(t * 0.8) * 0.06 + scroll * 0.6;
     if (gem.current) {
@@ -74,12 +80,13 @@ function Mark({ pose }: { pose: MonolithPose }) {
   });
 
   return (
+    <group scale={[0.76, 0.93, 0.85]}>
     <group ref={group} position={pose.position ?? [0, 0, 0]} scale={pose.scale ?? 1}>
       <mesh geometry={geometry} castShadow>
         <meshPhysicalMaterial color="#e6e9ef" metalness={1} roughness={0.26} clearcoat={0.5} clearcoatRoughness={0.25} envMapIntensity={1.4} />
       </mesh>
       {/* counter the mark's tilt so the diamond stands upright */}
-      <group position={[0.56, 0.56, 0.14]} rotation={[0, 0, -base[2]]} scale={1}>
+      <group position={[BITE.cx, 0, 0.12]} rotation={[0, 0, -base[2]]} scale={0.78}>
         <mesh ref={gem} geometry={diamond}>
           <meshPhysicalMaterial
             color="#1a4bff"
@@ -94,7 +101,8 @@ function Mark({ pose }: { pose: MonolithPose }) {
           />
         </mesh>
       </group>
-      <pointLight position={[0.6, 0.6, 1.1]} color="#2f5bff" intensity={3} distance={2.5} />
+      <pointLight position={[BITE.cx, 0, 1.1]} color="#2f5bff" intensity={3} distance={2.5} />
+    </group>
     </group>
   );
 }
