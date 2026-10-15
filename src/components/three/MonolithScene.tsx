@@ -2,7 +2,7 @@
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { ContactShadows, Environment, Lightformer, RoundedBox } from "@react-three/drei";
+import { ContactShadows, Environment, Lightformer } from "@react-three/drei";
 
 export type MonolithPose = {
   rotation?: [number, number, number];
@@ -41,10 +41,21 @@ function useMarkGeometry() {
   }, []);
 }
 
+/** The blue rhombus from the Advio logo, as a faceted 3D diamond (a tall octahedron). */
+function useDiamondGeometry() {
+  return useMemo(() => {
+    const g = new THREE.OctahedronGeometry(0.4, 0);
+    g.scale(1, 1.3, 1);
+    g.computeVertexNormals();
+    return g;
+  }, []);
+}
+
 function Mark({ pose }: { pose: MonolithPose }) {
   const group = useRef<THREE.Group>(null);
   const gem = useRef<THREE.Mesh>(null);
   const geometry = useMarkGeometry();
+  const diamond = useDiamondGeometry();
   const base = pose.rotation ?? [0.1, -0.38, 0.62];
 
   useFrame((state) => {
@@ -58,8 +69,7 @@ function Mark({ pose }: { pose: MonolithPose }) {
     g.rotation.z = base[2];
     g.position.y = (pose.position?.[1] ?? 0) + Math.sin(t * 0.8) * 0.06 + scroll * 0.6;
     if (gem.current) {
-      gem.current.rotation.x = t * 0.25;
-      gem.current.rotation.y = t * 0.35;
+      gem.current.rotation.y = t * 0.45;
     }
   });
 
@@ -68,18 +78,22 @@ function Mark({ pose }: { pose: MonolithPose }) {
       <mesh geometry={geometry} castShadow>
         <meshPhysicalMaterial color="#e6e9ef" metalness={1} roughness={0.26} clearcoat={0.5} clearcoatRoughness={0.25} envMapIntensity={1.4} />
       </mesh>
-      <RoundedBox ref={gem} args={[0.6, 0.6, 0.6]} radius={0.07} smoothness={6} position={[0.58, 0.58, 0.12]}>
-        <meshPhysicalMaterial
-          color="#1a4bff"
-          toneMapped={false}
-          emissive="#0b35ff"
-          emissiveIntensity={0.25}
-          metalness={0.2}
-          roughness={0.12}
-          clearcoat={1}
-          envMapIntensity={1.5}
-        />
-      </RoundedBox>
+      {/* counter the mark's tilt so the diamond stands upright */}
+      <group position={[0.56, 0.56, 0.14]} rotation={[0, 0, -base[2]]} scale={1}>
+        <mesh ref={gem} geometry={diamond}>
+          <meshPhysicalMaterial
+            color="#1a4bff"
+            toneMapped={false}
+            emissive="#0b35ff"
+            emissiveIntensity={0.25}
+            metalness={0.2}
+            roughness={0.08}
+            clearcoat={1}
+            flatShading
+            envMapIntensity={1.8}
+          />
+        </mesh>
+      </group>
       <pointLight position={[0.6, 0.6, 1.1]} color="#2f5bff" intensity={3} distance={2.5} />
     </group>
   );
