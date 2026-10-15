@@ -203,6 +203,45 @@ input[type="range"] {
 }
 html { transition: background-color 0.3s ease; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Keep the comparison heading, artwork, and controls together below the nav. */
+.comparison-section { position: relative; height: 160svh; }
+.comparison-scene {
+  position: sticky;
+  top: 5rem;
+  height: calc(100svh - 5rem);
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.comparison-heading { flex: none; text-align: center; }
+.comparison-heading h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+.comparison-heading > p:last-child { margin-inline: auto; max-width: 38rem; font-size: .875rem; line-height: 1.5; }
+.comparison-figure { flex: 0 1 auto; min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: .75rem; }
+.comparison-stage { container-type: size; display: grid; place-items: center; width: 100%; aspect-ratio: 5 / 4; flex: 0 1 auto; min-height: 0; }
+.comparison-frame { width: min(100cqw, 125cqh); aspect-ratio: 5 / 4; }
+.comparison-controls { flex: none; width: 100%; max-width: 40rem; margin-inline: auto; }
+@media (min-width: 1024px), (orientation: landscape) and (max-height: 600px) {
+  .comparison-scene { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: minmax(0, 1fr); gap: 2rem; padding: 1.5rem 2.5rem; }
+  .comparison-heading { align-self: center; text-align: left; }
+  .comparison-heading h2 { font-size: clamp(1.5rem, 4.5vw, 4rem); }
+  .comparison-heading > p:last-child { font-size: 1rem; }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .comparison-scene { gap: 1rem; padding: .75rem 1.25rem; }
+  .comparison-heading h2 { font-size: clamp(1.25rem, 3.5vw, 2rem); }
+  .comparison-heading > p:last-child { font-size: .75rem; }
+  .comparison-heading .eyebrow { font-size: .625rem; }
+  .comparison-figure { gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comparison-section { height: auto; }
+  .comparison-scene { position: relative; top: auto; }
+}
 .no-scrollbar { scrollbar-width: none; }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 

@@ -50,7 +50,7 @@ export const home = {
     eyebrow: "The challenge",
     title: "Not Every Household Matches the Advertiser's Intended Audience.",
     body: "The opportunity isn't more commercial time. It's capturing more value from impressions already being delivered.",
-    images: [img("Traditional_TV_vs._Targeted_AdGlean.png"), img("Traditional_TV_vs._Targeted_AdGlean_67486c30-3b07-4801-8e64-bd10d46d00af.png")],
+    images: [img("Traditional_TV_vs._Targeted_AdGlean.png"), img("adglean-comparison-abc.png")],
   },
   needed: {
     eyebrow: "Why AdGlean is needed",

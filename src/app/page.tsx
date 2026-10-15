@@ -2,14 +2,14 @@ import Hero from "@/components/draft/Hero";
 import HouseholdsScene from "@/components/draft/HouseholdsScene";
 import MeetAdGlean from "@/components/draft/MeetAdGlean";
 import ConnectionScene from "@/components/draft/ConnectionScene";
-import OperatingModel from "@/components/draft/OperatingModel";
+import StepsScroll from "@/components/sections/StepsScroll";
 import ImageCards from "@/components/sections/ImageCards";
 import ShowcaseTabs from "@/components/sections/ShowcaseTabs";
 import FeatureSlides from "@/components/sections/FeatureSlides";
 import Challenge from "@/components/sections/Challenge";
 import Marquee from "@/components/ui/Marquee";
 import CtaBand from "@/components/ui/CtaBand";
-import { home } from "@/lib/content";
+import { adglean, home } from "@/lib/content";
 import { DRAFT } from "@/lib/draft";
 
 export default function Home() {
@@ -19,13 +19,13 @@ export default function Home() {
   const smarterPath = (
     <FeatureSlides key="smarter" eyebrow={home.advantage.eyebrow} title={home.advantage.title} items={home.advantage.items} backdrop={home.advantage.backdrop} />
   );
-  const how = <OperatingModel key="how" />;
+  const how = <StepsScroll key="how" id="how" {...adglean.how} />;
   const difference = (
     <Challenge
       key="difference"
       eyebrow="See the difference"
       title="Traditional television vs. AdGlean."
-      body="Drag the slider to compare: the same commercial to every household, or the original ad kept for its audience and new eligible ads for the rest."
+      body="Keep Ad A with its intended audience. Deliver Ad B or Ad C to other eligible households."
       images={home.challenge.images}
     />
   );
