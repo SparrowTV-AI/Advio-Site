@@ -225,10 +225,30 @@ export const adglean = {
   },
   fits: {
     eyebrow: "How Advio fits into television delivery",
-    title: "Connecting Inventory, Intelligence, and Delivery",
-    body: "AdGlean is designed to create new opportunities while preserving the foundations of existing television advertising.",
-    image: img("Advio_Media_Intelligence_Hub.png"),
-    imageMobile: img("Advio_AdGlean__Neon_Advertising_Intelligence.png"),
+    title: "Better together.",
+    body: "Broadcasters and distributors each bring something the other needs. Advio connects them so both grow.",
+    nodes: [
+      {
+        id: "broadcasters" as const,
+        label: "Broadcasters",
+        image: img("frederic-koberl-2836IR07ocg-unsplash.jpg"),
+        brings: "Premium live inventory, authorized by the network.",
+        gets: "More value from the commercials you already air.",
+      },
+      {
+        id: "advio" as const,
+        label: "Advio + AdGlean",
+        brings: "The intelligence that matches each impression to the right household.",
+        gets: "A shared model where every partner wins and the original commitment is protected.",
+      },
+      {
+        id: "distributors" as const,
+        label: "Distributors",
+        image: img("apartment-life-B7FUVavJyfk-unsplash_1.jpg"),
+        brings: "Household-level delivery across your footprint.",
+        gets: "New revenue from the network you already run.",
+      },
+    ],
   },
 };
 

@@ -3,6 +3,7 @@ import ImageHero from "@/components/sections/ImageHero";
 import StepsScroll from "@/components/sections/StepsScroll";
 import Figure from "@/components/sections/Figure";
 import { Container, FeatureGrid, SectionHeading } from "@/components/ui/Section";
+import EcosystemLoop from "@/components/sections/EcosystemLoop";
 import CtaBand from "@/components/ui/CtaBand";
 import { adglean } from "@/lib/content";
 
@@ -20,7 +21,7 @@ export default function Page() {
           <FeatureGrid tone="light" items={adglean.safeguards.items} />
         </Container>
       </section>
-      <Figure {...adglean.fits} alt="Broadcasters, Advio + AdGlean, and distributors" />
+      <EcosystemLoop {...adglean.fits} />
       <CtaBand />
     </>
   );
