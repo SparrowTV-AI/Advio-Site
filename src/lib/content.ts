@@ -289,7 +289,7 @@ export const leadership = {
         {
           name: "Brandon Rockwood",
           photo: img("brandon-rockwood.jpg"),
-          role: "Head of Business Development",
+          role: "VP of Business Development",
           bio: [
             "Business development and sales executive with more than 15 years of experience building revenue systems, sales teams, and strategic partnerships. Former Vice President of Business Strategy at Alder Holdings and President of Sorce Energy Solutions, with 2016 Gold and Silver Stevie Awards for sales and customer service. Brandon leads partnerships with media companies, sports organizations, and distributors.",
           ],
