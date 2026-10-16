@@ -32,10 +32,12 @@ Open http://localhost:3000.
 
 ## Contact form email
 
-Add these in Vercel → Project → Settings → Environment Variables:
+Submissions go to **info@advio.com**, matching the contact-page and footer email links.
+The recipient is defined in `src/lib/site.ts`; `CONTACT_TO` is no longer used.
+
+Configure email delivery in Vercel → Project → Settings → Environment Variables:
 
 - `RESEND_API_KEY` — from resend.com
-- `CONTACT_TO` — inbox that receives requests
 - `CONTACT_FROM` — optional, e.g. `ADVIO <hello@yourdomain>` (domain must be verified in Resend)
 
-Without them, submissions are logged in Vercel's function logs.
+Without `RESEND_API_KEY`, the form reports an error instead of confirming an undelivered submission.

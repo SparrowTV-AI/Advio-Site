@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
+import { site } from "@/lib/site";
 
 /**
- * Contact form handler. Set RESEND_API_KEY and CONTACT_TO (optionally CONTACT_FROM) in Vercel
- * to deliver submissions by email. Without them, submissions are logged to the server console.
+ * Deliver contact submissions to the site's published inbox.
+ * Configure RESEND_API_KEY and optionally CONTACT_FROM in Vercel.
  */
 export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
@@ -22,17 +23,15 @@ export async function POST(req: Request) {
   ].join("\n");
 
   const key = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO;
-  if (!key || !to) {
-    console.log("[contact] submission (email not configured):\n" + text);
-    return NextResponse.json({ ok: true });
+  if (!key) {
+    return NextResponse.json({ error: "Email delivery is not configured" }, { status: 503 });
   }
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from: process.env.CONTACT_FROM ?? "Advio Website <onboarding@resend.dev>",
-      to: [to],
+      to: [site.email],
       reply_to: email,
       subject: `Website inquiry — ${name || email}`,
       text,

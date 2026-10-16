@@ -3,7 +3,7 @@ export const site = {
   tagline: "Television, connected.",
   description:
     "Advio connects broadcasters and distributors to unlock new advertising opportunities within existing television inventory. Powered by AdGlean.",
-  email: "hello@advio.tv",
+  email: "info@advio.com",
 };
 
 export const nav = [
