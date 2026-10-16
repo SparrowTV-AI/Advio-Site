@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { useScroll, useMotionValueEvent, useReducedMotion } from "motion/react";
 
-const AUTO_REVEAL_PERCENT = 20;
+const AUTO_REVEAL_PERCENT = 80;
 
 /** Scroll introduces the comparison; visitors control the rest of the reveal. */
 export default function Challenge({ eyebrow, title, body, images }: { eyebrow: string; title: string; body: string; images: string[] }) {
@@ -18,7 +18,7 @@ export default function Challenge({ eyebrow, title, body, images }: { eyebrow: s
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     if (!manual.current && !reducedMotion) {
-      // Begin once the scene is pinned; pause at 20% before it scrolls away.
+      // Begin once the scene is pinned; pause at 80% AdGlean before it scrolls away.
       setPos(Math.min(1, Math.max(0, progress) / 0.8) * AUTO_REVEAL_PERCENT);
     }
   });
