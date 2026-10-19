@@ -7,7 +7,7 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Broadcast", href: "/broadcasters" },
+  { label: "Broadcasters", href: "/broadcasters" },
   { label: "Distributors", href: "/distributors" },
   { label: "AdGlean", href: "/adglean" },
   { label: "Company", href: "/company" },
