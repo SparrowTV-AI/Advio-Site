@@ -19,7 +19,7 @@
   --color-paper: var(--paper);
   --color-muted: var(--muted);
 
-  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-sans: "Montserrat Variable", system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -114,7 +114,7 @@ html.lenis body {
 }
 
 body {
-  font-family: "Inter Variable", system-ui, sans-serif;
+  font-family: "Montserrat Variable", system-ui, sans-serif;
   background: var(--ink);
   overflow-x: clip;
 }
@@ -125,9 +125,9 @@ body {
 }
 
 .display {
-  font-family: "Inter Tight Variable", "Inter Variable", sans-serif;
-  letter-spacing: -0.035em;
-  line-height: 0.95;
+  font-family: "Montserrat Variable", system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
   font-weight: 700;
 }
 
