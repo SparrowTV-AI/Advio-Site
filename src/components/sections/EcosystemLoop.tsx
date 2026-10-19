@@ -132,7 +132,7 @@ export default function EcosystemLoop({
                       </>
                     ) : (
                       <span className="absolute inset-0 flex items-center justify-center">
-                        <Image src="/brand/advio-mark.png" alt="" width={64} height={64} className="w-[34%] opacity-95" />
+                        <Image src="/brand/advio-symbol.svg" alt="" width={52} height={64} className="w-[28%]" />
                       </span>
                     )}
                     <span className={`absolute inset-x-0 px-[14%] text-center font-semibold leading-tight text-white ${hub ? "bottom-[16%] text-[clamp(0.7rem,1.6vw,1rem)]" : "bottom-[14%] text-[clamp(0.7rem,1.5vw,0.95rem)]"}`}>
