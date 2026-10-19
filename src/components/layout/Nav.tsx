@@ -41,7 +41,7 @@ export default function Nav() {
           ))}
           <Link
             href={cta.href}
-            className="rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-white"
+            className="rounded-full bg-gem px-5 py-2.5 text-sm font-semibold text-[#ffffff] transition-colors hover:bg-gem-2"
           >
             {cta.label}
           </Link>
@@ -74,7 +74,7 @@ export default function Nav() {
                   {n.label}
                 </Link>
               ))}
-              <Link href={cta.href} className="mt-4 rounded-full bg-lime px-5 py-4 text-center font-semibold text-ink">
+              <Link href={cta.href} className="mt-4 rounded-full bg-gem px-5 py-4 text-center font-semibold text-[#ffffff]">
                 {cta.label}
               </Link>
             </div>

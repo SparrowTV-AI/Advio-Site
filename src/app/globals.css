@@ -10,9 +10,11 @@
   --color-lime: var(--accent);
   --color-lime-2: var(--accent-2);
   --color-cyan: var(--cyan);
-  --color-electric: #3b5bff;
-  --color-gem: #4f7bff;
-  --color-gem-2: #2f5bff;
+  --color-electric: #2457ff;
+  --color-purple: #6b4dff;
+  --color-green: #39c98a;
+  --color-gem: #2457ff;
+  --color-gem-2: #1e4bd8;
   --color-steel: var(--steel);
   --color-silver: var(--silver);
   --color-mist: var(--mist);
@@ -27,73 +29,77 @@
 /* ---------- Theme tokens ----------
    Dark is the default. Light flips surfaces and text; ".force-dark" pins a block
    (photo overlays, the blue CTA band) to dark tokens in either theme. */
+/* Brand palette (Advio Visual Brand Guidelines v1.2):
+   Midnight Navy #071B3A, Advio Blue #2457FF, Electric Purple #6B4DFF, Signal Green #39C98A,
+   Cool Gray #626D83, Soft Background #F5F8FF, White. Other shades are the guide's functional
+   extensions (#0A2252, #1B2D4A, #253652, #87A3FF, #A7BCFF, #D3DDFF, #EDF2FF, #B0B6C1, #E3E8F3, ...). */
 :root,
 .force-dark {
-  --ink: #050a1f;
-  --navy: #091233;
-  --navy-2: #0e1a45;
-  --navy-3: #18295f;
+  --ink: #071b3a;
+  --navy: #0a2252;
+  --navy-2: #1b2d4a;
+  --navy-3: #253652;
   --fg: #ffffff;
-  --line: rgba(150, 175, 255, 0.14);
-  --grid: rgba(150, 175, 255, 0.22);
-  --accent: #b9caff;
-  --accent-2: #8fa9ff;
-  --cyan: #7fa2ff;
-  --steel: #9fb4ff;
-  --silver: #c9d1de;
-  --mist: #e9eefb;
-  --paper: #f4f7fd;
-  --muted: #9aabcf;
-  --modern-a: rgba(59, 91, 255, 0.38);
-  --modern-b: rgba(127, 162, 255, 0.16);
-  --modern-top: #071036;
-  --modern-bottom: #050a1f;
-  --spot-bg: #071036;
-  --spot-a: rgba(59, 91, 255, 0.55);
-  --dot-base: #8a96ad;
-  --dot-intended: #dfe5ef;
-  --dot-dim: #26334d;
-  --dot-intended-dim: #3a4763;
-  --dot-outside: #9fb4ff;
-  --dot-eligible: #4f7bff;
-  --dot-ineligible: #55658a;
+  --line: #253652;
+  --grid: rgba(135, 163, 255, 0.2);
+  --accent: #87a3ff;
+  --accent-2: #a7bcff;
+  --cyan: #87a3ff;
+  --steel: #87a3ff;
+  --silver: #b0b6c1;
+  --mist: #edf2ff;
+  --paper: #f5f8ff;
+  --muted: #b0b6c1;
+  --modern-a: rgba(36, 87, 255, 0.38);
+  --modern-b: rgba(135, 163, 255, 0.16);
+  --modern-top: #0a2252;
+  --modern-bottom: #071b3a;
+  --spot-bg: #0a2252;
+  --spot-a: rgba(36, 87, 255, 0.55);
+  --dot-base: #818a9c;
+  --dot-intended: #e3e8f3;
+  --dot-dim: #1b2d4a;
+  --dot-intended-dim: #626d83;
+  --dot-outside: #87a3ff;
+  --dot-eligible: #39c98a;
+  --dot-ineligible: #6a7689;
   --grad-a: #ffffff;
-  --grad-b: #b9caff;
-  --grad-c: #7f9cff;
+  --grad-b: #87a3ff;
+  --grad-c: #a694ff;
   color-scheme: dark;
 }
 [data-theme="light"] {
-  --ink: #f6f8fd;
-  --navy: #eef2fb;
-  --navy-2: #e4eaf8;
-  --navy-3: #d2dbf3;
-  --fg: #0b1533;
-  --line: rgba(20, 40, 120, 0.12);
-  --grid: rgba(47, 75, 255, 0.16);
-  --accent: #2f4bff;
-  --accent-2: #4f6dff;
-  --cyan: #3b5bff;
-  --steel: #3550e6;
-  --silver: #33415c;
-  --mist: #0c1640;
-  --paper: #0e1a45;
-  --muted: #4b5a7c;
-  --modern-a: rgba(79, 110, 255, 0.22);
-  --modern-b: rgba(127, 162, 255, 0.18);
-  --modern-top: #eaf0ff;
-  --modern-bottom: #f6f8fd;
-  --spot-bg: #e8eeff;
-  --spot-a: rgba(79, 110, 255, 0.35);
-  --dot-base: #9aa6bf;
-  --dot-intended: #1a2a5c;
-  --dot-dim: #d3dbee;
-  --dot-intended-dim: #b8c3dd;
-  --dot-outside: #7f9cff;
-  --dot-eligible: #2f4bff;
-  --dot-ineligible: #a3b0cf;
-  --grad-a: #0b1533;
-  --grad-b: #2f4bff;
-  --grad-c: #6f8dff;
+  --ink: #ffffff;
+  --navy: #f5f8ff;
+  --navy-2: #edf2ff;
+  --navy-3: #d3ddff;
+  --fg: #071b3a;
+  --line: #e3e8f3;
+  --grid: rgba(36, 87, 255, 0.14);
+  --accent: #2457ff;
+  --accent-2: #1e4bd8;
+  --cyan: #2457ff;
+  --steel: #2457ff;
+  --silver: #626d83;
+  --mist: #071b3a;
+  --paper: #0a2252;
+  --muted: #626d83;
+  --modern-a: rgba(36, 87, 255, 0.18);
+  --modern-b: rgba(135, 163, 255, 0.18);
+  --modern-top: #edf2ff;
+  --modern-bottom: #ffffff;
+  --spot-bg: #edf2ff;
+  --spot-a: rgba(36, 87, 255, 0.3);
+  --dot-base: #818a9c;
+  --dot-intended: #071b3a;
+  --dot-dim: #e3e8f3;
+  --dot-intended-dim: #b0b6c1;
+  --dot-outside: #87a3ff;
+  --dot-eligible: #2457ff;
+  --dot-ineligible: #b0b6c1;
+  --grad-a: #071b3a;
+  --grad-b: #2457ff;
+  --grad-c: #6b4dff;
   color-scheme: light;
 }
 [data-theme="light"] .force-dark { color-scheme: dark; }

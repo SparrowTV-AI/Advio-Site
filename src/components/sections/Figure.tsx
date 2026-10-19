@@ -6,7 +6,7 @@ import { Container, SectionHeading } from "@/components/ui/Section";
 export default function Figure({ eyebrow, title, body, image, imageMobile, alt }: { eyebrow: string; title: string; body: string; image: string; imageMobile?: string; alt: string }) {
   return (
     <section className="relative overflow-hidden bg-ink py-24 md:py-36">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_70%,rgba(59,79,245,0.25),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_70%,rgba(36,87,255,0.25),transparent_60%)]" />
       <Container className="relative">
         <SectionHeading eyebrow={eyebrow} title={title} body={body} />
         <motion.div

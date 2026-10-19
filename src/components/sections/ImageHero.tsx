@@ -39,9 +39,9 @@ export default function ImageHero({
           </motion.div>
         </motion.div>
       ) : (
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(59,79,245,0.45),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(36,87,255,0.45),transparent_55%)]" />
       )}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,11,22,0.95)_0%,rgba(5,11,22,0.75)_45%,rgba(5,11,22,0.2)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,27,58,0.95)_0%,rgba(7,27,58,0.75)_45%,rgba(7,27,58,0.2)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink to-transparent" />
 
       <motion.div style={{ opacity: fade }} className="relative mx-auto w-full max-w-7xl px-5 md:px-10">

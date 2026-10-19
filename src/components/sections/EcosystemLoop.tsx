@@ -62,8 +62,8 @@ export default function EcosystemLoop({
                   </feMerge>
                 </filter>
                 <radialGradient id="eco-hub" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="var(--gem, #4f7bff)" stopOpacity="0.45" />
-                  <stop offset="100%" stopColor="var(--gem, #4f7bff)" stopOpacity="0" />
+                  <stop offset="0%" stopColor="var(--gem, #2457ff)" stopOpacity="0.45" />
+                  <stop offset="100%" stopColor="var(--gem, #2457ff)" stopOpacity="0" />
                 </radialGradient>
               </defs>
 

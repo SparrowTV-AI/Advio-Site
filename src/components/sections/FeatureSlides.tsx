@@ -113,7 +113,7 @@ export default function FeatureSlides({
               >
                 {it.icon ? (
                   <div className="grid h-full w-full place-items-center">
-                    <div className="grid h-36 w-36 place-items-center rounded-full border border-white/20 bg-white/10 shadow-[0_0_120px_rgba(127,162,255,0.25)] backdrop-blur-md md:h-64 md:w-64">
+                    <div className="grid h-36 w-36 place-items-center rounded-full border border-white/20 bg-white/10 shadow-[0_0_120px_rgba(135,163,255,0.25)] backdrop-blur-md md:h-64 md:w-64">
                       <Image src={it.icon} alt="" width={140} height={140} className="h-16 w-16 object-contain invert md:h-32 md:w-32" />
                     </div>
                   </div>

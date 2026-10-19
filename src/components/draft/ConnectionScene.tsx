@@ -42,15 +42,15 @@ export default function ConnectionScene() {
         <motion.div style={{ rotateX: tilt, scale, transformPerspective: 1400 }} className="relative w-full max-w-5xl px-5">
           <div className="relative mx-auto aspect-[900/340] w-full">
             <motion.div style={{ x: leftX }} className="absolute left-0 top-0 z-10 h-full w-1/3">
-              <Piece kind="left" id="pl" from="#13235e" to="#3651c9" stroke="rgba(150,175,255,0.35)" />
+              <Piece kind="left" id="pl" from="#0a2252" to="#2457ff" stroke="rgba(135,163,255,0.4)" />
               <PieceText label="Broadcasters" title="Premium inventory. Commercial authority." body="Authorize eligible inventory and set advertiser rules." />
             </motion.div>
             <motion.div style={{ y: midY, opacity: midO }} className="absolute left-1/3 top-0 z-20 h-full w-1/3">
-              <Piece kind="mid" id="pm" from="#f2f5ff" to="#9fb4ff" stroke="rgba(255,255,255,0.9)" glow />
+              <Piece kind="mid" id="pm" from="#f5f8ff" to="#a7bcff" stroke="rgba(255,255,255,0.9)" glow />
               <PieceText dark mid label="ADVIO" title="The intelligence that connects." body="Eligibility · Activation · Measurement" />
             </motion.div>
             <motion.div style={{ x: rightX }} className="absolute left-2/3 top-0 z-10 h-full w-1/3">
-              <Piece kind="right" id="pr" from="#4f6dff" to="#16255c" stroke="rgba(150,175,255,0.35)" />
+              <Piece kind="right" id="pr" from="#2457ff" to="#0a2252" stroke="rgba(135,163,255,0.4)" />
               <PieceText right label="Distributors" title="Audience delivery. Network capability." body="Enable supported delivery and define participation." />
             </motion.div>
           </div>
@@ -107,7 +107,7 @@ function Piece({ kind, id, from, to, stroke, glow }: { kind: "left" | "mid" | "r
         fill={`url(#${id})`}
         stroke={stroke}
         strokeWidth={1.5}
-        style={glow ? { filter: "drop-shadow(0 24px 50px rgba(79,123,255,0.55))" } : undefined}
+        style={glow ? { filter: "drop-shadow(0 24px 50px rgba(36,87,255,0.55))" } : undefined}
       />
     </svg>
   );

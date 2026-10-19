@@ -9,7 +9,7 @@ type Props = {
 
 export default function Button({ href, children, variant = "lime", className = "" }: Props) {
   const styles = {
-    lime: "bg-lime text-ink hover:bg-white",
+    lime: "bg-gem text-[#ffffff] hover:bg-gem-2 active:bg-[#1a42ba]",
     ghost: "border border-white/25 text-white hover:border-lime hover:text-lime",
     dark: "bg-ink text-white hover:bg-navy-3",
   }[variant];

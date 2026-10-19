@@ -151,8 +151,8 @@ export default function Challenge({ eyebrow, title, body, images }: { eyebrow: s
               <div className="pointer-events-none absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
                 <Image src={images[1]} alt="With AdGlean: two households receive Ad A, two receive Ad B, and two receive Ad C." fill sizes="(min-width: 1024px) 650px, 100vw" draggable={false} className="object-contain" />
               </div>
-              <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 w-0.5 bg-[#b9caff] shadow-[0_0_20px_rgba(127,162,255,0.8)]" style={{ left: `${pos}%` }} />
-              <div aria-hidden="true" className="pointer-events-none absolute top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#b9caff] text-xl font-bold text-[#050a1f] shadow-lg" style={{ left: `clamp(1.5rem, ${pos}%, calc(100% - 1.5rem))` }}>⇆</div>
+              <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 w-0.5 bg-[#87a3ff] shadow-[0_0_20px_rgba(135,163,255,0.8)]" style={{ left: `${pos}%` }} />
+              <div aria-hidden="true" className="pointer-events-none absolute top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#87a3ff] text-xl font-bold text-[#071b3a] shadow-lg" style={{ left: `clamp(1.5rem, ${pos}%, calc(100% - 1.5rem))` }}>⇆</div>
             </div>
           </div>
           <div className="comparison-controls">

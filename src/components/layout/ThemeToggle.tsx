@@ -18,7 +18,7 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       localStorage.setItem("advio-theme", next);
     } catch {}
     const meta = document.querySelector('meta[name="theme-color"]');
-    meta?.setAttribute("content", next === "light" ? "#f6f8fd" : "#050a1f");
+    meta?.setAttribute("content", next === "light" ? "#ffffff" : "#071b3a");
     setTheme(next);
   };
 

@@ -22,7 +22,7 @@ export default function PageHero({
   const o = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   return (
     <section ref={ref} className="grain relative flex min-h-[86svh] items-end overflow-hidden bg-ink pb-20 pt-36">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(59,79,245,0.4),transparent_55%),radial-gradient(ellipse_at_10%_90%,rgba(127,162,255,0.08),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(36,87,255,0.4),transparent_55%),radial-gradient(ellipse_at_10%_90%,rgba(135,163,255,0.08),transparent_45%)]" />
       <div className="grid-bg absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_70%)]" />
       <motion.div style={{ y, opacity: o }} className="relative mx-auto w-full max-w-7xl px-5 md:px-10">
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="eyebrow mb-8 text-cyan">

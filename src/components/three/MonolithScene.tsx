@@ -89,9 +89,9 @@ function Mark({ pose }: { pose: MonolithPose }) {
       <group position={[BITE.cx, 0, 0.12]} rotation={[0, 0, -base[2]]} scale={0.78}>
         <mesh ref={gem} geometry={diamond}>
           <meshPhysicalMaterial
-            color="#1a4bff"
+            color="#2457ff"
             toneMapped={false}
-            emissive="#0b35ff"
+            emissive="#1a42ba"
             emissiveIntensity={0.25}
             metalness={0.2}
             roughness={0.08}
@@ -101,7 +101,7 @@ function Mark({ pose }: { pose: MonolithPose }) {
           />
         </mesh>
       </group>
-      <pointLight position={[BITE.cx, 0, 1.1]} color="#2f5bff" intensity={3} distance={2.5} />
+      <pointLight position={[BITE.cx, 0, 1.1]} color="#2457ff" intensity={3} distance={2.5} />
     </group>
     </group>
   );
@@ -122,7 +122,7 @@ export default function MonolithScene({ pose = {} }: { pose?: MonolithPose }) {
         <Lightformer form="rect" intensity={4} position={[0, 4, -2]} scale={[10, 2, 1]} />
         <Lightformer form="rect" intensity={2.5} position={[-5, 1, 1]} rotation-y={Math.PI / 2} scale={[8, 3, 1]} />
         <Lightformer form="rect" intensity={1.5} position={[5, -1, 1]} rotation-y={-Math.PI / 2} scale={[8, 2, 1]} />
-        <Lightformer form="ring" intensity={2} color="#4f7bff" position={[2, 0, -4]} scale={3} />
+        <Lightformer form="ring" intensity={2} color="#87a3ff" position={[2, 0, -4]} scale={3} />
         <Lightformer form="rect" intensity={0.6} position={[0, -4, 2]} rotation-x={-Math.PI / 2} scale={[10, 10, 1]} />
         <Lightformer form="rect" intensity={1.2} position={[-3, 3, 6]} scale={[6, 4, 1]} />
         <Lightformer form="rect" intensity={0.8} position={[3, -2, 6]} scale={[4, 6, 1]} color="#cfd8ea" />

@@ -30,7 +30,7 @@ export default function MeetAdGlean({ eyebrow, body, image }: { eyebrow: string;
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">{body}</p>
           </Reveal>
         </div>
-        <motion.div style={{ clipPath: clip }} className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-30px_rgba(59,91,255,0.7)]">
+        <motion.div style={{ clipPath: clip }} className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-30px_rgba(36,87,255,0.7)]">
           <motion.div style={{ y }} className="absolute -inset-[10%]">
             <Image src={image} alt="AdGlean audience analytics" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </motion.div>

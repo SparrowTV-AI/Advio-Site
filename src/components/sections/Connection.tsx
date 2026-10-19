@@ -13,13 +13,13 @@ export default function Connection({ eyebrow, title, body, items }: { eyebrow: s
 
   return (
     <section className="relative overflow-hidden bg-navy py-24 md:py-36">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(59,79,245,0.25),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(36,87,255,0.25),transparent_60%)]" />
       <Container className="relative">
         <SectionHeading eyebrow={eyebrow} title={title} body={body} />
         <div ref={ref} className="relative mt-20">
           {/* connecting line */}
           <div className="absolute left-[16%] right-[16%] top-[30%] hidden h-px bg-white/10 md:block">
-            <motion.div style={{ width: line }} className="h-full bg-gradient-to-r from-cyan via-lime to-cyan shadow-[0_0_20px_rgba(127,162,255,0.7)]" />
+            <motion.div style={{ width: line }} className="h-full bg-gradient-to-r from-cyan via-lime to-cyan shadow-[0_0_20px_rgba(135,163,255,0.7)]" />
           </div>
           <div className="relative grid gap-8 md:grid-cols-3">
             {items.map((it, i) => (

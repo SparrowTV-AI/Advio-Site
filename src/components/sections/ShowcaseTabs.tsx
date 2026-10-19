@@ -56,7 +56,7 @@ export default function ShowcaseTabs({
             <Image src={it.image} alt="" fill sizes="100vw" className="scale-110 object-cover blur-2xl" />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(59,79,245,0.35),transparent_60%),linear-gradient(to_bottom,rgba(7,20,42,0.4),rgba(5,11,22,0.9))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(36,87,255,0.35),transparent_60%),linear-gradient(to_bottom,rgba(7,27,58,0.4),rgba(7,27,58,0.9))]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-28">
           <div className="mx-auto max-w-3xl text-center">
@@ -118,7 +118,7 @@ export default function ShowcaseTabs({
               </AnimatePresence>
               {body2 && <p className="mt-10 max-w-sm text-sm text-white/50">{body2}</p>}
             </div>
-            <div className="relative mx-auto aspect-[9/14] w-full max-w-[340px] overflow-hidden rounded-3xl border border-white/10 shadow-[0_40px_100px_-30px_rgba(59,79,245,0.6)] md:ml-auto md:mr-0">
+            <div className="relative mx-auto aspect-[9/14] w-full max-w-[340px] overflow-hidden rounded-3xl border border-white/10 shadow-[0_40px_100px_-30px_rgba(36,87,255,0.6)] md:ml-auto md:mr-0">
               <AnimatePresence>
                 <motion.div
                   key={it.image}

@@ -114,7 +114,7 @@ export default function HouseholdsScene() {
                   style={{
                     background: colorFor(step, r),
                     transitionDelay: `${(r % 40) * 12}ms`,
-                    boxShadow: step === 3 && r >= TOTAL * 0.6 && r % 2 === 0 ? "0 0 14px rgba(79,123,255,0.85)" : "none",
+                    boxShadow: step === 3 && r >= TOTAL * 0.6 && r % 2 === 0 ? "0 0 14px rgba(36,87,255,0.85)" : "none",
                   }}
                 />
               );
