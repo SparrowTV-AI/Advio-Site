@@ -22,7 +22,7 @@ export default function Hero() {
   const desktop = useIsDesktop();
 
   return (
-    <section ref={ref} className="grain relative flex min-h-[100svh] items-center overflow-hidden pt-24">
+    <section ref={ref} className="grain relative flex min-h-[100svh] items-center overflow-hidden pb-16 pt-24 md:pb-0">
       <div className="bg-modern absolute inset-0" />
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink to-transparent" />
       {DRAFT === 1 && (
