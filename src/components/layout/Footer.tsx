@@ -42,12 +42,6 @@ export default function Footer() {
           <p>Powered by AdGlean</p>
         </div>
       </div>
-      <p
-        aria-hidden
-        className="display pointer-events-none absolute -bottom-[0.18em] left-1/2 -translate-x-1/2 select-none text-[28vw] leading-none text-white/[0.03]"
-      >
-        advio
-      </p>
     </footer>
   );
 }
