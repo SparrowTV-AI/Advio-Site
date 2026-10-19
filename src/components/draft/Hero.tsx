@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Button from "@/components/ui/Button";
 import Monolith from "@/components/three/Monolith";
 import { DRAFT } from "@/lib/draft";
+import { useIsDesktop } from "@/lib/useIsDesktop";
 
 const lines = [
   { t: "Unlock more", c: "text-white" },
@@ -17,6 +18,8 @@ export default function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
   const lift = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const objY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  // On phones the copy and buttons sit below the mark, so fading them on scroll hid them before they were read.
+  const desktop = useIsDesktop();
 
   return (
     <section ref={ref} className="grain relative flex min-h-[100svh] items-center overflow-hidden pt-24">
@@ -31,7 +34,7 @@ export default function Hero() {
       )}
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-6 px-5 md:grid-cols-[1.05fr_1fr] md:px-10">
-        <motion.div style={{ opacity: fade, y: lift }} className="relative z-10 order-2 md:order-1">
+        <motion.div style={desktop ? { opacity: fade, y: lift } : undefined} className="relative z-10 order-2 md:order-1">
           <h1 className="display text-[15vw] md:text-[6.6rem]">
             {lines.map((l, i) => (
               <span key={l.t} className="block overflow-hidden pb-[0.06em]">
@@ -60,7 +63,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          style={{ y: objY }}
+          style={desktop ? { y: objY } : undefined}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}

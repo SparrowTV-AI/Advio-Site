@@ -2,14 +2,18 @@
 import { useRef } from "react";
 import { DRAFT } from "@/lib/draft";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
+import { useIsDesktop } from "@/lib/useIsDesktop";
 
 /** Apple-style pinned scene: the two businesses slide together and ADVIO locks in between. */
 export default function ConnectionScene() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
-  const leftX = useTransform(p, [0, 0.45], ["-70%", "0%"]);
-  const rightX = useTransform(p, [0, 0.45], ["70%", "0%"]);
+  // Phones have no side margin, so a smaller slide-in keeps every piece on screen.
+  const desktop = useIsDesktop();
+  const off = desktop ? 70 : 22;
+  const leftX = useTransform(p, [0, 0.45], [`-${off}%`, "0%"]);
+  const rightX = useTransform(p, [0, 0.45], [`${off}%`, "0%"]);
   const midY = useTransform(p, [0.35, 0.6], ["-45%", "0%"]);
   const midO = useTransform(p, [0.4, 0.55], [0, 1]);
   const tilt = useTransform(p, [0, 1], [28, 8]);
@@ -112,7 +116,7 @@ function Piece({ kind, id, from, to, stroke, glow }: { kind: "left" | "mid" | "r
 function PieceText({ label, title, body, dark, right, mid }: { label: string; title: string; body: string; dark?: boolean; right?: boolean; mid?: boolean }) {
   return (
     <div className={`force-dark relative flex h-full flex-col justify-between p-3 sm:p-5 md:p-8 ${right ? "md:pl-12" : ""} ${mid ? "!px-[20%] text-center items-center" : ""} ${dark ? "text-ink" : "text-white"}`}>
-      <p className={`eyebrow text-[8px] sm:text-[10px] md:text-xs ${dark ? "text-ink/70" : "text-steel"}`}>{label}</p>
+      <p className={`eyebrow text-[8px] max-sm:tracking-[0.04em]! sm:text-[10px] md:text-xs ${dark ? "text-ink/70" : "text-steel"}`}>{label}</p>
       <div>
         <p className="display text-[11px] leading-tight sm:text-lg md:text-3xl">{title}</p>
         <p className={`mt-3 hidden text-sm leading-relaxed md:block ${dark ? "text-ink/70" : "text-white/70"}`}>{body}</p>

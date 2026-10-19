@@ -50,7 +50,48 @@ export default function Challenge({ eyebrow, title, body, images }: { eyebrow: s
       setPos((value) => Math.max(0, Math.min(100, value + (event.deltaX * unit / element.clientWidth) * 100)));
     };
     element.addEventListener("wheel", onWheel, { passive: false });
-    return () => element.removeEventListener("wheel", onWheel);
+
+    // iOS Safari and Chrome can cancel pointer events once a touch starts to pan,
+    // so touches are handled natively: a mostly-horizontal swipe drives the slider,
+    // a mostly-vertical one is left to scroll the page.
+    let touch: { x: number; y: number; axis: "x" | "y" | null } | null = null;
+    const setFromX = (clientX: number) => {
+      const bounds = element.getBoundingClientRect();
+      if (!bounds.width) return;
+      manual.current = true;
+      setPos(Math.max(0, Math.min(100, ((clientX - bounds.left) / bounds.width) * 100)));
+    };
+    const onTouchStart = (event: TouchEvent) => {
+      if (event.touches.length !== 1) { touch = null; return; }
+      touch = { x: event.touches[0].clientX, y: event.touches[0].clientY, axis: null };
+    };
+    const onTouchMove = (event: TouchEvent) => {
+      if (!touch || event.touches.length !== 1) return;
+      const t = event.touches[0];
+      const dx = Math.abs(t.clientX - touch.x);
+      const dy = Math.abs(t.clientY - touch.y);
+      if (!touch.axis && (dx > 6 || dy > 6)) touch.axis = dx > dy ? "x" : "y";
+      if (touch.axis === "x") {
+        event.preventDefault();
+        setFromX(t.clientX);
+      }
+    };
+    const onTouchEnd = (event: TouchEvent) => {
+      // A tap (no movement) jumps the divider to that spot.
+      if (touch && !touch.axis && event.changedTouches[0]) setFromX(event.changedTouches[0].clientX);
+      touch = null;
+    };
+    element.addEventListener("touchstart", onTouchStart, { passive: true });
+    element.addEventListener("touchmove", onTouchMove, { passive: false });
+    element.addEventListener("touchend", onTouchEnd);
+    element.addEventListener("touchcancel", onTouchEnd);
+    return () => {
+      element.removeEventListener("wheel", onWheel);
+      element.removeEventListener("touchstart", onTouchStart);
+      element.removeEventListener("touchmove", onTouchMove);
+      element.removeEventListener("touchend", onTouchEnd);
+      element.removeEventListener("touchcancel", onTouchEnd);
+    };
   }, []);
 
   return (
@@ -65,7 +106,7 @@ export default function Challenge({ eyebrow, title, body, images }: { eyebrow: s
           <div className="comparison-stage">
             <div
               ref={frame}
-              className="comparison-frame relative cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-2xl border border-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className="comparison-frame relative cursor-ew-resize touch-pan-y select-none [-webkit-touch-callout:none] [-webkit-user-select:none] overflow-hidden rounded-2xl border border-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
               role="slider"
               tabIndex={0}
               aria-label="Compare traditional television with AdGlean"
@@ -82,7 +123,8 @@ export default function Challenge({ eyebrow, title, body, images }: { eyebrow: s
                 if (value !== null) { event.preventDefault(); choose(value); }
               }}
               onPointerDown={(event) => {
-                if (!event.isPrimary || event.button !== 0) return;
+                // Touch is handled by the native touch listeners above.
+                if (event.pointerType === "touch" || !event.isPrimary || event.button !== 0) return;
                 event.currentTarget.setPointerCapture(event.pointerId);
                 pointer.current = { id: event.pointerId, x: event.clientX, y: event.clientY, moved: false };
                 if (event.pointerType === "mouse") move(event.clientX);
