@@ -39,7 +39,7 @@ export default function FeatureSlides({
       <Container>
         <SectionHeading tone={tone} eyebrow={eyebrow} title={title} />
         <div className={`mt-14 grid overflow-hidden rounded-[2rem] border md:grid-cols-[1fr_1.35fr] ${light ? "border-ink/10 bg-white" : "border-white/10 bg-navy"}`}>
-          <div className={`flex min-h-[420px] flex-col justify-between p-8 md:p-12 ${light ? "" : ""}`}>
+          <div className={`flex min-h-[330px] flex-col justify-between p-6 md:min-h-[420px] md:p-12 ${light ? "" : ""}`}>
             <div>
               <p className={`eyebrow ${light ? "text-electric" : "text-cyan"}`}>
                 {String(active + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
@@ -52,13 +52,13 @@ export default function FeatureSlides({
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <h3 className={`display mt-6 text-4xl md:text-5xl ${light ? "text-ink" : "text-white"}`}>{it.title}</h3>
-                  <p className={`mt-5 max-w-md text-lg leading-relaxed ${light ? "text-ink/70" : "text-muted"}`}>{it.body}</p>
+                  <h3 className={`display mt-4 text-3xl md:mt-6 md:text-5xl ${light ? "text-ink" : "text-white"}`}>{it.title}</h3>
+                  <p className={`mt-3 max-w-md text-base leading-relaxed md:mt-5 md:text-lg ${light ? "text-ink/70" : "text-muted"}`}>{it.body}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            <div className="mt-10 flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-3 md:mt-10">
               <div className={`flex items-center gap-1.5 rounded-full px-2.5 py-2 ${light ? "bg-ink/5" : "bg-white/5"}`}>
                 {items.map((x, i) => (
                   <button
@@ -95,7 +95,7 @@ export default function FeatureSlides({
             </div>
           </div>
 
-          <div className="relative min-h-[300px] overflow-hidden md:min-h-[520px]">
+          <div className="relative min-h-[200px] overflow-hidden md:min-h-[520px]">
             {backdrop && (
               <>
                 <Image src={backdrop} alt="" fill sizes="(min-width: 768px) 55vw, 100vw" className="scale-105 object-cover" />
@@ -113,8 +113,8 @@ export default function FeatureSlides({
               >
                 {it.icon ? (
                   <div className="grid h-full w-full place-items-center">
-                    <div className="grid h-48 w-48 place-items-center rounded-full border border-white/20 bg-white/10 shadow-[0_0_120px_rgba(127,162,255,0.25)] backdrop-blur-md md:h-64 md:w-64">
-                      <Image src={it.icon} alt="" width={140} height={140} className="h-24 w-24 object-contain invert md:h-32 md:w-32" />
+                    <div className="grid h-36 w-36 place-items-center rounded-full border border-white/20 bg-white/10 shadow-[0_0_120px_rgba(127,162,255,0.25)] backdrop-blur-md md:h-64 md:w-64">
+                      <Image src={it.icon} alt="" width={140} height={140} className="h-16 w-16 object-contain invert md:h-32 md:w-32" />
                     </div>
                   </div>
                 ) : it.image ? (
