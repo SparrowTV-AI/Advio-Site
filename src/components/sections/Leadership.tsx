@@ -18,15 +18,16 @@ export default function LeadershipGroups({ groups }: { groups: { name: string; p
               <span className="text-sm text-white/40">{String(g.people.length).padStart(2, "0")}</span>
             </div>
           </Reveal>
-          <div className={`mt-10 grid gap-6 ${g.people.length % 2 === 0 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+          <div className={`mt-10 grid gap-4 md:gap-6 ${g.people.length % 2 === 0 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
             {g.people.map((p, i) => {
               const isOpen = open === p.name;
               const initials = p.name.split(" ").map((n) => n[0]).join("");
               return (
                 <Reveal key={p.name} delay={i * 0.08}>
+                  {/* Block layout prevents Safari from reserving space for hidden biography text. */}
                   <button
                     onClick={() => setOpen(isOpen ? null : p.name)}
-                    className={`group w-full rounded-3xl border p-6 text-left transition-colors md:p-8 ${isOpen ? "border-lime/50 bg-navy-2" : "border-white/10 bg-navy hover:border-white/25"}`}
+                    className={`group block w-full rounded-3xl border p-6 text-left transition-colors md:p-8 ${isOpen ? "border-lime/50 bg-navy-2" : "border-white/10 bg-navy hover:border-white/25"}`}
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-center gap-5">
