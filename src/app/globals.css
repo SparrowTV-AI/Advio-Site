@@ -253,10 +253,10 @@ html { transition: background-color 0.3s ease; }
 
 /* Light theme: keep the nav readable over dark photo heroes */
 [data-theme="light"] header.fixed {
-  background: rgba(246, 248, 253, 0.82);
+  background: rgba(255, 255, 255, 0.82);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(20, 40, 120, 0.08);
+  border-bottom: 1px solid #e3e8f3;
 }
 
 /* Ecosystem loop */
