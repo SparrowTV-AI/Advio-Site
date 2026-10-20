@@ -27,7 +27,7 @@ export default function StepsScroll({ eyebrow, title, body, steps, id }: { eyebr
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="rounded-[1.75rem] bg-[#071b3a] p-7 text-white shadow-[0_20px_60px_-30px_rgba(7,27,58,0.35)]"
+              className="rounded-[1.75rem] bg-ink p-7 text-white shadow-[0_20px_60px_-30px_rgba(7,27,58,0.35)]"
             >
               <CardBody s={s} i={i} />
             </motion.div>
@@ -80,7 +80,7 @@ function CardBody({ s, i }: { s: Step; i: number }) {
       <div className="flex items-center justify-between">
         <span className="display text-sm opacity-50">{s.n ?? String(i + 1).padStart(2, "0")}</span>
         {s.icon && (
-          <span className="grid h-14 w-14 place-items-center rounded-full bg-lime-2">
+          <span className="grid h-14 w-14 place-items-center rounded-full bg-[#a7bcff]">
             <Image src={s.icon} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
           </span>
         )}
@@ -96,11 +96,15 @@ function StepCard({ s, i, total, p }: { s: Step; i: number; total: number; p: Mo
   const a = Math.max(0, start - 0.08);
   const opacity = useTransform(p, [a, start], [0.25, 1]);
   const y = useTransform(p, [a, start], [30, 0]);
-  const bg = useTransform(p, [start - 0.02, start + 0.02], ["#ffffff", "#071b3a"]);
-  const color = useTransform(p, [start - 0.02, start + 0.02], ["#071b3a", "#ffffff"]);
+  // Theme-aware: the section is light in the dark theme and dark in the light theme, so the idle card
+  // uses --paper and the active card fades in a --ink overlay (a CSS-variable color can't be interpolated).
+  const active = useTransform(p, [start - 0.02, start + 0.02], [0, 1]);
   return (
-    <motion.div style={{ opacity, y, backgroundColor: bg, color }} className="rounded-[1.75rem] p-8 shadow-[0_20px_60px_-30px_rgba(7,27,58,0.35)] md:p-10">
+    <motion.div style={{ opacity, y }} className="relative rounded-[1.75rem] bg-paper p-8 text-ink shadow-[0_20px_60px_-30px_rgba(7,27,58,0.35)] md:p-10">
       <CardBody s={s} i={i} />
+      <motion.div aria-hidden style={{ opacity: active }} className="absolute inset-0 rounded-[1.75rem] bg-ink p-8 text-white md:p-10">
+        <CardBody s={s} i={i} />
+      </motion.div>
     </motion.div>
   );
 }
